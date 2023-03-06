@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import './input.scss';
-import { MailOutlined } from '@ant-design/icons-vue';
+import "./input.scss";
+import { MailOutlined } from "@ant-design/icons-vue";
 export default {
   components: {
     MailOutlined,
@@ -25,16 +25,16 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: '',
+      default: "",
     },
     label: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {
     return {
-      userName: '',
+      userName: "",
     };
   },
 };

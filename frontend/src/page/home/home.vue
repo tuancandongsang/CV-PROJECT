@@ -5,12 +5,8 @@
 </template>
 
 <script>
-import Drawer from '@/components/Drawer/Drawer.vue'
+import Drawer from "@/components/Drawer/Drawer.vue";
 export default {
-components:{Drawer}
-}
+  components: { Drawer },
+};
 </script>
-
-<style>
-
-</style>

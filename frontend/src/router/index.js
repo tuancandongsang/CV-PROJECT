@@ -1,11 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import NotFound from '../page/PageNotFound/NotFoundPage.vue';
-import Login from '../page/login/login.vue';
-import login_tuyendung from '../page/login-tuyendung/Login-tuyendung.vue';
-import SignUp_tuyendung from '../page/login-tuyendung/SignUp-tuyendung.vue';
-import Home from '../page/home/home.vue';
-import Layout from '../layout/layout.vue';
-import LayoutTienich from '../page/tienich/LayoutTienich.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import Layout from "../layout/layout.vue";
 
 // import { getJwtToken } from '../utils/helpers';
 
@@ -13,59 +7,71 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      redirect: '/home',
+      path: "/",
+      redirect: "/home",
       component: Layout,
       children: [
         {
-          path: '/home',
-          component: Home,
-          name: 'home',
+          path: "/home",
+          component: () => import("../page/home/home.vue"),
+          name: "home",
         },
         {
-          path: '/top-company',
+          path: "/top-company",
           component: () => import("../page/company/Company.vue"),
-          name: 'TopCompany',
+          name: "TopCompany",
         },
         {
-          path: '/list-company',
-          component: () => import('../page/company/Company.vue'),
-          name: 'ListCompany',
+          path: "/list-company",
+          component: () => import("../page/company/Company.vue"),
+          name: "ListCompany",
         },
         {
-          path: '/tienich',
-          component: LayoutTienich,
-          name: 'LayoutTienich',
-          redirect: '/lai-xuat-kep',
+          path: "/tienich",
+          component: () => import("../page/tienich/LayoutTienich.vue"),
+          name: "LayoutTienich",
+          redirect: "/lai-xuat-kep",
           children: [
             {
-              path: 'lai-xuat-kep',
+              path: "lai-xuat-kep",
               component: () =>
-                import('../page/tienich/laixuatkep/Laixuatkep.vue'),
-              name: 'Laixuatkep',
+                import("../page/tienich/laixuatkep/Laixuatkep.vue"),
+              name: "Laixuatkep",
             },
             {
-              path: 'gross-to-net',
-              component: () => import('../page/tienich/gross-net/GrossNet.vue'),
-              name: 'GrossNet',
+              path: "gross-to-net",
+              component: () => import("../page/tienich/gross-net/GrossNet.vue"),
+              name: "GrossNet",
             },
           ],
         },
       ],
     },
-    { path: '/login', component: Login, name: 'login' },
-    { path: '/sign-up', component: Login, name: 'sign-up' },
     {
-      path: '/login-tuyendung',
-      component: login_tuyendung,
-      name: 'login_tuyendung',
+      path: "/login",
+      component: () => import("../page/login/login.vue"),
+      name: "login",
     },
     {
-      path: '/signup-tuyendung',
-      component: SignUp_tuyendung,
-      name: 'SignUp_tuyendung',
+      path: "/sign-up",
+      component: () => import("../page/login/login.vue"),
+      name: "sign-up",
     },
-    { path: '/:notFound(.*)', component: NotFound, name: 'NotFound' },
+    {
+      path: "/login-tuyendung",
+      component: () => import("../page/login-tuyendung/Login-tuyendung.vue"),
+      name: "login_tuyendung",
+    },
+    {
+      path: "/signup-tuyendung",
+      component: () => import("../page/login-tuyendung/SignUp-tuyendung.vue"),
+      name: "SignUp_tuyendung",
+    },
+    {
+      path: "/:notFound(.*)",
+      component: () => import("../page/PageNotFound/NotFoundPage.vue"),
+      name: "NotFound",
+    },
   ],
 });
 // router.beforeEach((to, from, next) => {

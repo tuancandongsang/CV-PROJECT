@@ -18,7 +18,15 @@
               <p>Số tiền bạn có sẵn để đầu tư ban đầu.</p>
             </div>
             <div class="main-recipe-form-item-detail-input">
-              <Input placeholder="VD: 10,000,000 (VND) " />
+              <Input
+                placeholder="VD: 10,000,000"
+                type="number"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
+                <template #left><pound-outlined /></template>
+                <template #right> <span>(VND)</span> </template>
+              </Input>
             </div>
           </div>
         </div>
@@ -30,7 +38,15 @@
               <p>Số tiền bạn định thêm vào tiền gốc hàng tháng.</p>
             </div>
             <div class="main-recipe-form-item-detail-input">
-              <Input placeholder="VD: 10,000,000 (VND) " />
+              <Input
+                placeholder="VD: 10,000,000"
+                type="number"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
+                <template #left><pound-outlined /></template>
+                <template #right> <span>(VND)</span> </template>
+              </Input>
             </div>
           </div>
           <div class="main-recipe-form-item-detail">
@@ -39,7 +55,13 @@
               <p>Khoảng thời gian, tính bằng năm, mà bạn dự định tiết kiệm.</p>
             </div>
             <div class="main-recipe-form-item-detail-input">
-              <Input placeholder="VD: 10" />
+              <Input
+                placeholder="VD: 10 năm"
+                type="number"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
+              </Input>
             </div>
           </div>
         </div>
@@ -51,7 +73,13 @@
               <p>Lãi suất ước tính theo kỳ hạn gửi của bạn.</p>
             </div>
             <div class="main-recipe-form-item-detail-input">
-              <Input placeholder="VD: 10" />
+              <Input
+                placeholder="VD: 10 %"
+                type="number"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
+              </Input>
             </div>
           </div>
         </div>
@@ -264,28 +292,30 @@
 </template>
 
 <script>
-import './laixuatkep.scss';
-import Button from '@/components/Button/Button.vue';
-import Input from '@/components/input/InputBase.vue';
-import SelectOption from '@/components/SelectOption/SelectOption.vue';
+import "./laixuatkep.scss";
+import { PoundOutlined } from "@ant-design/icons-vue";
+import Button from "@/components/Button/Button.vue";
+import Input from "@/components/input/Input.vue";
+
+import SelectOption from "@/components/SelectOption/SelectOption.vue";
 export default {
-  components: { Button, Input, SelectOption },
+  components: { Button, SelectOption, Input, PoundOutlined },
   data() {
     return {
       newsList: [
-        { content: 'Giấy tờ thủ tục hồ sơ xin việc', link: '/login' },
-        { content: 'Tải mẫu sơ yếu lý lịch chuẩn miễn phí', link: '/login' },
-        { content: 'Cách viết Email xin việc tiếng Anh', link: '/login' },
-        { content: 'Các mẫu CV tham khảo theo nhóm ngành', link: '/login' },
-        { content: 'Mẫu đơn xin nghỉ việc chuẩn', link: '/login' },
-        { content: 'Hướng dẫn viết CV tiếng Nhật', link: '/login' },
-        { content: 'Các mẫu CV tham khảo theo nhóm ngành', link: '/login' },
+        { content: "Giấy tờ thủ tục hồ sơ xin việc", link: "/login" },
+        { content: "Tải mẫu sơ yếu lý lịch chuẩn miễn phí", link: "/login" },
+        { content: "Cách viết Email xin việc tiếng Anh", link: "/login" },
+        { content: "Các mẫu CV tham khảo theo nhóm ngành", link: "/login" },
+        { content: "Mẫu đơn xin nghỉ việc chuẩn", link: "/login" },
+        { content: "Hướng dẫn viết CV tiếng Nhật", link: "/login" },
+        { content: "Các mẫu CV tham khảo theo nhóm ngành", link: "/login" },
       ],
       optionSelectTimeB4: [
-        { value: 365, label: 'Hằng năm' },
-        { value: 30, label: 'Hằng tháng' },
-        { value: 120, label: 'Hằng quý' },
-        { value: 1, label: 'Hằng ngày' },
+        { value: 365, label: "Hằng năm" },
+        { value: 30, label: "Hằng tháng" },
+        { value: 120, label: "Hằng quý" },
+        { value: 1, label: "Hằng ngày" },
       ],
     };
   },

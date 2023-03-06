@@ -1,11 +1,64 @@
 @import "@/styles/index.scss";
 
-.noti {
-    &-header {
-        padding: 4px 8px;
-        border-radius: 8px;
-        background-color: $text-green;
-        color: $text-default;
-        font-size: 600;
+#gross-net {
+    .tools {
+        h3 {
+            font-weight: 600;
+            color: $text-green;
+            padding: 0 8px;
+        }
+
+        p {
+            color: $text-second;
+        }
+
+        &-regulations {
+            background-color: $bg-app;
+
+            &-select {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                margin-top: 30px;
+                gap: 20px;
+                border-bottom: 1px solid $border-grey;
+
+                label {
+                    margin: 0;
+                    margin-left: 10px;
+
+                    b {
+                        color: $text-error;
+                    }
+                }
+            }
+
+            &-define {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                gap: 20px;
+                justify-content: space-between;
+
+                p {
+                    color: $text;
+                }
+
+                span {
+                    color: $text-green;
+                }
+            }
+        }
+    }
+
+
+    .noti {
+        &-header {
+            padding: 4px 8px;
+            border-radius: 8px;
+            background-color: $text-green;
+            color: $text-default;
+            font-size: 600;
+        }
     }
 }
