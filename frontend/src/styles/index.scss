@@ -1,0 +1,31 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './btn.scss';
+
+body {
+  max-height: 100vh;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
