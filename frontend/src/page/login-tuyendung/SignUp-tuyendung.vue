@@ -73,6 +73,7 @@
               công nghệ tuyển dụng ứng dụng sâu AI & Hiring Funnel
             </p>
           </div>
+          <h3 class="go_loginTuyendung" @click="() => this.$router.push('/login-tuyendung')">Bạn đã có tài khoản nhà tuyển dụng</h3>
         </div>
       </div>
       <div class="signup_tuyendung-body">

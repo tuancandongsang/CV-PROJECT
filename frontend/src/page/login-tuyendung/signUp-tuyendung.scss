@@ -15,6 +15,9 @@
             font-weight: 600 !important;
 
         }
+        img{
+            width: 50px;
+        }
     }
 
     &-select {
@@ -174,5 +177,12 @@
                 }
             }
         }
+    }
+}
+.go_loginTuyendung{
+    color: $btn-default;
+    &:hover{
+        opacity: 0.8;
+        cursor: pointer;
     }
 }
