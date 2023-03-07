@@ -1,13 +1,7 @@
 @import "@/styles/index.scss";
 
-#baohiemtxahoi {
+#baohiemxahoi {
     .recipe {
-        h1 {
-            font-weight: 600;
-            color: $text-green;
-            padding: 8px 0;
-        }
-
         i {
             color: $text-second;
         }
@@ -41,14 +35,6 @@
     }
 
     .explain {
-
-        h3,
-        h2 {
-            font-weight: 600;
-            color: $text-green;
-            padding: 8px 0;
-        }
-
         a {
             b {
                 color: $text-green;

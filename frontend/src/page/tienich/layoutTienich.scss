@@ -15,6 +15,17 @@
 
         .main {
             width: 66%;
+
+            h3,
+            h2 {
+                font-weight: 600;
+                color: $text-green;
+                padding: 8px;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
         }
 
         .news {

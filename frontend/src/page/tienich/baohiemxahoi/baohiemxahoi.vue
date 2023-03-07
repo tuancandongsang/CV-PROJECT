@@ -1,8 +1,8 @@
 
 <template>
-  <div id="baohiemtxahoi">
+  <div id="baohiemxahoi">
     <div class="defaul-container recipe">
-      <h1>Công cụ tính bảo hiểm xã hội một lần online miễn phí 2023</h1>
+      <h2>Công cụ tính bảo hiểm xã hội một lần online miễn phí 2023</h2>
       <p>
         <i
           >Nếu nghỉ việc hoặc không đóng bảo hiểm xã hội trong vòng 1 năm, bạn
@@ -282,6 +282,6 @@
 </template>
   
 <script>
-import "./baohiemtxahoi.scss";
+import "./baohiemxahoi.scss";
 export default {};
 </script>

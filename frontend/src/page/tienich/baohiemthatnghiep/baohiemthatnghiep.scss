@@ -1,3 +1,67 @@
 @import "@/styles/index.scss";
 
-#baohiemthatnghiep {}
+#baohiemthatnghiep {
+    .recipe {
+        .region-detail {
+            margin-top: 10px;
+        }
+
+        .select6month {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+
+            label {
+                margin-left: 5px;
+            }
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+        }
+
+        .company {
+            display: flex;
+            align-items: start;
+            gap: 30px;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid $border-grey;
+
+            label {
+                margin-left: 4px;
+            }
+
+            h4,
+            h3 {
+                padding: 0;
+            }
+        }
+
+        .explain {
+            margin-top: 4px;
+        }
+
+    }
+
+    .detail {
+
+        h3 {
+            b {
+                font-size: 1.5rem;
+            }
+        }
+
+        .warnning {
+            padding: 10px;
+            background-color: $bg-second;
+            border: 1px $border-grey dashed;
+            color: $text-error;
+
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}

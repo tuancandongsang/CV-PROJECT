@@ -60,7 +60,7 @@ export const router = createRouter({
             {
               path: "bao-hiem-xa-hoi",
               component: () =>
-                import("../page/tienich/baohiemtxahoi/Baohiemxahoi.vue"),
+                import("../page/tienich/baohiemxahoi/Baohiemxahoi.vue"),
               name: "Baohiemxahoi",
             },
           ],

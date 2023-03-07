@@ -1,6 +1,5 @@
 <!-- param:{
-  content= "conten_btn"
-btn_css= "class_btn"
+  content= "conten_btn" btn_css= "class_btn"
 } -->
 <template>
   <button :class="btn_css">{{ content }}</button>
@@ -11,19 +10,19 @@ export default {
     content: {
       type: String,
       required: true,
-      default: 'Submit',
+      default: "Submit",
     },
     btn_css: {
       type: String,
       required: true,
-      default: 'btn_green',
+      default: "btn_green",
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/index.scss';
+@import "@/styles/index.scss";
 .btn_green {
   @include btn($btn-green, $text-default, $btn-border);
 }
