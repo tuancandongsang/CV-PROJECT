@@ -43,6 +43,11 @@ export const router = createRouter({
               component: () => import("../page/tienich/gross-net/GrossNet.vue"),
               name: "GrossNet",
             },
+            {
+              path: "bao-hiem-that-nghiep",
+              component: () => import("../page/tienich/baohiemthatnghiep/Baohiemthatnghiep.vue"),
+              name: "Baohiemthatnghiep",
+            },
           ],
         },
       ],

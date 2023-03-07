@@ -175,7 +175,7 @@ export default {
           },
           {
             tittle: 'Bảo hiểm thất nghiệp',
-            link: '/sing-up',
+            link: '/tienich/bao-hiem-that-nghiep',
           },
         ],
         cv: [

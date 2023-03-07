@@ -91,7 +91,6 @@
           <p>Đã có tài khoản? &nbsp; <b>Đăng nhập ngay</b></p>
         </div>
         <div class="signup_tuyendung-body-form">
-          <!-- <a-form ref="formRef" :model="formState" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol"> -->
             <h1 class="title-acc">TÀI KHOẢN</h1>
             <div class="signup_tuyendung-body-form_item">
               <p>Email đăng nhập:</p>
@@ -172,7 +171,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Giới tính:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" v-bind="rules.gender" has-feedback>
+                <a-form-item label=""  >
                   <a-select v-model:value="formState.gender" placeholder="-Chọn giới tính-">
                     <a-select-option value="male">Male</a-select-option>
                     <a-select-option value="woman">Woman</a-select-option>
@@ -196,7 +195,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Vị trí công tác::</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" v-bind="rules.workplace" has-feedback>
+                <a-form-item label="" >
                   <a-select v-model:value="formState.workplace" placeholder="-Chọn vị trí công tác-">
                     <a-select-option value="nhân viên">nhân viên</a-select-option>
                     <a-select-option value="Giám Đốc">Giám Đốc</a-select-option>
@@ -220,7 +219,6 @@
                   <skype-outlined />
                 </template>
                 <template #right>
-
                 </template>
                 </Input>
               </div>
@@ -237,14 +235,12 @@
                 </a-form-item>
               </div>
             </div>
-
             <div class="signup_tuyendung-body-form_submit">
               <a-form-item>
                 <a-button type="primary" @click="onSubmit">Hoàn tất</a-button>
                 <a-button style="margin-left: 10px" @click="cancel">Hủy</a-button>
               </a-form-item>
             </div>
-          <!-- </a-form> -->
         </div>
       </div>
     </div>
@@ -309,50 +305,8 @@ export default {
         check: false,
         workplace: undefined,
         location: undefined,
-        skype: '',
+        skype: undefined,
       },
-      rules: {
-        email: {
-          required: true,
-          message: 'Please input email',
-        },
-        pass: {
-          required: true,
-          message: 'Please input password',
-        },
-        repass: {
-          required: true,
-          message: 'Please input again password',
-        },
-        name: {
-          required: true,
-          message: 'Please input name',
-        },
-        company: {
-          required: true,
-          message: 'Please input company',
-        },
-        phone: {
-          required: true,
-          message: 'Please input degits',
-          trigger: 'blur',
-        },
-        gender: {
-          required: true,
-          message: 'Please select gender',
-          trigger: 'blur',
-        },
-        check: {
-          required: true,
-          message: 'Please apply',
-        },
-        workplace: {
-          required: true,
-          message: 'Please input workplace',
-        },
-      },
-      labelCol: { span: 4 },
-      wrapperCol: { span: 14 },
     };
   },
   methods: {
