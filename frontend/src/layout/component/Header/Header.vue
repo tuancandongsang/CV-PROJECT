@@ -106,11 +106,11 @@
 </template>
 
 <script>
-import './Header.scss';
-import Button from '@/components/Button/Button.vue';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue';
-import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
-import Drawer from '@/components/Drawer/Drawer.vue';
+import "./Header.scss";
+import Button from "@/components/Button/Button.vue";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons-vue";
+import DropdownImg from "./component/Dropdown/Dropdown-have-img.vue";
+import Drawer from "@/components/Drawer/Drawer.vue";
 
 export default {
   components: {
@@ -123,81 +123,81 @@ export default {
   data() {
     return {
       dataNavbarHeader: {
-        imgJob: '../../../assets/image/img_header_dropdown/nav-contest.webp',
+        imgJob: "../../../assets/image/img_header_dropdown/nav-contest.webp",
         job: [
           {
-            tittle: 'CV',
-            link: '/login',
+            tittle: "CV",
+            link: "/login",
           },
           {
-            tittle: 'Việc Làm Nhật',
-            link: '/login',
+            tittle: "Việc Làm Nhật",
+            link: "/login",
           },
           {
-            tittle: 'Việc Làm Châu Âu',
-            link: '/login',
+            tittle: "Việc Làm Châu Âu",
+            link: "/login",
           },
           {
-            tittle: 'Việc Làm Hàn Quốc',
-            link: '/ssss',
+            tittle: "Việc Làm Hàn Quốc",
+            link: "/ssss",
           },
           {
-            tittle: 'Các nước khác',
-            link: '/sing-up',
+            tittle: "Các nước khác",
+            link: "/sing-up",
           },
         ],
         company: [
           {
-            tittle: 'Danh Sách Công Ty',
-            link: '/list-company',
+            tittle: "Danh Sách Công Ty",
+            link: "/list-company",
           },
           {
-            tittle: 'Top Công Ty',
-            link: '/top-company',
+            tittle: "Top Công Ty",
+            link: "/top-company",
           },
         ],
         utility: [
           {
-            tittle: 'Gross,<-->Net',
-            link: '/tienich/gross-to-net',
+            tittle: "Gross,<-->Net",
+            link: "/tienich/gross-to-net",
           },
           {
-            tittle: 'Lãi xuất kép',
-            link: '/tienich/lai-xuat-kep',
+            tittle: "Lãi xuất kép",
+            link: "/tienich/lai-xuat-kep",
           },
           {
-            tittle: 'Thu nhập cá nhân',
-            link: '/login',
+            tittle: "Thu nhập cá nhân",
+            link: "/tienich/thu-nhap-ca-nhan",
           },
           {
-            tittle: 'bảo hiểm xã hội',
-            link: '/ssss',
+            tittle: "Bảo hiểm xã hội",
+            link: "/tienich/bao-hiem-xa-hoi",
           },
           {
-            tittle: 'Bảo hiểm thất nghiệp',
-            link: '/tienich/bao-hiem-that-nghiep',
+            tittle: "Bảo hiểm thất nghiệp",
+            link: "/tienich/bao-hiem-that-nghiep",
           },
         ],
         cv: [
           {
-            tittle: 'Mẫu CV',
-            link: '/login',
+            tittle: "Mẫu CV",
+            link: "/login",
           },
           {
-            tittle: 'Dịch vụ tư vấn Cv',
-            link: '/login',
+            tittle: "Dịch vụ tư vấn Cv",
+            link: "/login",
           },
           {
-            tittle: 'Chuyển đổi Cv từ tiếng Việt sang tiếng nhật',
-            link: '/login',
+            tittle: "Chuyển đổi Cv từ tiếng Việt sang tiếng nhật",
+            link: "/login",
           },
           {
-            tittle: 'Chuyển đổi Cv từ tiếng Việt sang tiếng Đức',
-            link: '/ssss',
+            tittle: "Chuyển đổi Cv từ tiếng Việt sang tiếng Đức",
+            link: "/ssss",
           },
           {
-            tittle: 'Chuyển đổi Cv từ tiếng Việt sang tiếng hàn',
-            link: '/sing-up',
+            tittle: "Chuyển đổi Cv từ tiếng Việt sang tiếng hàn",
+            link: "/sing-up",
           },
         ],
       },
@@ -217,7 +217,7 @@ export default {
       this.visibleLogin = false;
     },
     handleSignUp() {
-      this.$router.push('/signup-tuyendung');
+      this.$router.push("/signup-tuyendung");
     },
   },
 };

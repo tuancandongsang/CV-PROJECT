@@ -45,8 +45,23 @@ export const router = createRouter({
             },
             {
               path: "bao-hiem-that-nghiep",
-              component: () => import("../page/tienich/baohiemthatnghiep/Baohiemthatnghiep.vue"),
+              component: () =>
+                import(
+                  "../page/tienich/baohiemthatnghiep/Baohiemthatnghiep.vue"
+                ),
               name: "Baohiemthatnghiep",
+            },
+            {
+              path: "thu-nhap-ca-nhan",
+              component: () =>
+                import("../page/tienich/thunhapcanhan/Thunhapcanhan.vue"),
+              name: "Thunhapcanhan",
+            },
+            {
+              path: "bao-hiem-xa-hoi",
+              component: () =>
+                import("../page/tienich/baohiemtxahoi/Baohiemxahoi.vue"),
+              name: "Baohiemxahoi",
             },
           ],
         },

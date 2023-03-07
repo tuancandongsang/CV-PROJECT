@@ -1,13 +1,11 @@
-
 <template>
-    <div id="baohiemthatnghiep">
-        baohiemthatnghiep
-    </div>
+  <div id="baohiemthatnghiep">baohiemxahoi</div>
 </template>
-  
+
 <script>
-export default {
-
-
-}
+import "./baohiemthatnghiep.scss";
+export default {};
 </script>
+
+<style>
+</style>
