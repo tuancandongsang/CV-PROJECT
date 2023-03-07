@@ -6,23 +6,11 @@
           <div class="company-header_infor">
             <div class="company-header_infor-list">
               <ul>
-                <li
-                  @click="() => changeTopOrList('list')"
-                  :class="showTopOrList === 'list' ? 'showTypeCompany' : ''"
-                >
-                  <router-link to="/list-company"
-                    ><span style="color: black"
-                      >Danh sách công ty</span
-                    ></router-link
-                  >
+                <li @click="() => changeTopOrList('list')" :class="showTopOrList === 'list' ? 'showTypeCompany' : ''">
+                  <router-link to="/list-company"><span style="color: black">Danh sách công ty</span></router-link>
                 </li>
-                <li
-                  @click="() => changeTopOrList('top')"
-                  :class="showTopOrList === 'top' ? 'showTypeCompany' : ''"
-                >
-                  <router-link to="/top-company"
-                    ><span style="color: black"> Top công ty</span></router-link
-                  >
+                <li @click="() => changeTopOrList('top')" :class="showTopOrList === 'top' ? 'showTypeCompany' : ''">
+                  <router-link to="/top-company"><span style="color: black"> Top công ty</span></router-link>
                 </li>
               </ul>
               <h2>Khám phá 100.000+ công ty nổi bật</h2>
@@ -32,46 +20,35 @@
               </p>
               <div class="company-header_infor-list_search">
                 <div class="input">
-                  <InputSearch placeholder="Seach company" ref="inputSearch" />
-                </div>
-                <div class="button">
-                  <Button
-                    content="Search"
-                    btn_css="btn_green"
-                    @click="searchTopCompany"
-                  />
+                  <Input placeholder='Search company' type='text' ref="search" cssColorBorder='greenBorder'
+                    cssColor='greenColor'>
+                  <template #left>
+                    <search-outlined />
+                  </template>
+                  <template #right>
+                    <div>
+                      <Button content="Search" btn_css="btn_green" @click="searchCompany" />
+                    </div>
+                  </template>
+                  </Input>
                 </div>
               </div>
             </div>
           </div>
           <div class="company-header-img">
-            <img
-              src="https://www.topcv.vn/v4/image/company-billBoard.svg"
-              class="w-100"
-              alt=""
-            />
+            <img src="https://www.topcv.vn/v4/image/company-billBoard.svg" class="w-100" alt="" />
           </div>
         </div>
       </div>
       <div class="company-main">
-        <h2
-          class="company-main-title"
-          v-if="showTopOrList === 'top' ? true : false"
-        >
+        <h2 class="company-main-title" v-if="showTopOrList === 'top' ? true : false">
           DANH SÁCH CÁC TOP CÔNG TY
         </h2>
-        <h2
-          class="company-main-title"
-          v-if="showTopOrList === 'list' ? true : false"
-        >
+        <h2 class="company-main-title" v-if="showTopOrList === 'list' ? true : false">
           DANH SÁCH CÁC CÔNG TY NỔI BẬT
         </h2>
         <div class="company-main-body">
-          <div
-            class="company-main-body-item"
-            v-for="item in listTopCompany"
-            :key="item.title"
-          >
+          <div class="company-main-body-item" v-for="item in listTopCompany" :key="item.title">
             <img :src="item.url" alt="" />
             <h5>{{ item.title }}</h5>
             <p>
@@ -89,14 +66,16 @@
 
 <script>
 import './company.scss';
+import { SearchOutlined } from '@ant-design/icons-vue';
 import Button from '@/components/Button/Button.vue';
-import InputSearch from '@/components/input/inputSearch.vue';
+import Input from '@/components/input/input.vue';
 import PanigationVue from '@/components/Panigation/Panigation.vue';
 export default {
-  components: { InputSearch, Button, PanigationVue },
+  components: { Input, Button, PanigationVue, SearchOutlined },
   methods: {
-    searchTopCompany() {
-      console.log(this.$refs.inputSearch.valueSearch);
+    searchCompany() {
+      console.log('tuancan');
+      console.log(this.$refs.search.value);
     },
     changeTopOrList(text) {
       this.showTopOrList = text;
@@ -171,5 +150,4 @@ export default {
   },
 };
 </script>
-<style>
-</style>
+<style></style>

@@ -5,15 +5,19 @@
         h3 {
             font-weight: 600;
             color: $text-green;
-            padding: 0 8px;
+            padding: 8px;
         }
 
         p {
             color: $text-second;
+            font-size: 0.95rem;
+
         }
 
         &-regulations {
             background-color: $bg-app;
+            border-radius: 4px;
+            margin-bottom: 10px;
 
             &-select {
                 display: flex;
@@ -21,6 +25,7 @@
                 padding: 10px 20px;
                 margin-top: 30px;
                 gap: 20px;
+
                 border-bottom: 1px solid $border-grey;
 
                 label {
@@ -48,17 +53,131 @@
                     color: $text-green;
                 }
             }
+
+            &-income {
+                display: flex;
+                gap: 50px;
+                padding: 10px 0;
+                align-items: center;
+            }
+
+            &-money {
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                gap: 20px;
+
+                &-up {
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                }
+
+                &-input {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+
+            &-region {
+                display: flex;
+                gap: 20px;
+                padding: 10px 0;
+
+                a {
+                    color: $text-error;
+                    font-size: 0.8rem;
+                }
+            }
+
+            &-dependent {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            &-change {
+                padding: 10px 0;
+                display: flex;
+                margin: auto;
+                gap: 20px;
+                width: 500px;
+            }
         }
     }
 
 
     .noti {
         &-header {
-            padding: 4px 8px;
             border-radius: 8px;
             background-color: $text-green;
             color: $text-default;
-            font-size: 600;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            padding: 2px 12px;
+        }
+
+        h3 {
+            margin: 8px 0;
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 8px;
         }
     }
+
+    .explain {
+        &-social {
+            span {
+                background-color: $bg-green;
+                margin-right: 20px;
+                padding: 8px 12px;
+                color: $text-default;
+                font-size: 600;
+                border-radius: 20px;
+            }
+        }
+
+        .whatisGross {
+            font-size: 1.2rem;
+            padding: 12px 0;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 4px 0;
+        }
+        .box-saw-example{
+            text-align: justify;
+            span{
+                color: $text-error;
+            }
+        }
+        .grossToNet{
+            padding: 20px 0;
+        }
+        &-img{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .warning{
+            color: $text-error;
+        }
+    }
+}
+
+.box-saw {
+    border: 1px dashed  $border-grey;
+    padding: 20px 30px;
+    text-align: center;
+    margin: 10px 0;
 }

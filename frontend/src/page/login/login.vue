@@ -3,8 +3,7 @@
     <div class="infor">
       <div class="infor-header">
         <router-link to="/">
-          <img src="../../assets/image/logo/topcv-logo.webp" alt=""
-        /></router-link>
+          <img src="../../assets/image/logo/topcv-logo.webp" alt="" /></router-link>
         <h2 v-if="loginOrSingin">Chào mừng bạn trở lại,</h2>
         <h2 v-if="!loginOrSingin">Chào mừng bạn đến với TopCV</h2>
         <p>
@@ -13,14 +12,53 @@
         </p>
       </div>
       <div class="infor-contain">
-        <FromLogin :loginOrSingin="loginOrSingin" />
+        <div class="components-input-demo-presuffix">
+          <br>
+          <Input ref="name" v-if="!loginOrSingin" placeholder='Nguyen Van A' type='text' cssColorBorder='greenBorder'
+            cssColor='greenColor' lable='Full Name'>
+          <template #left>
+            <user-outlined />
+          </template>
+          </Input>
+          <br>
+          <Input ref="email" placeholder='Nhập email' type='text' cssColorBorder='greenBorder' cssColor='greenColor'
+            lable='Email'>
+          <template #left>
+            <mail-outlined />
+          </template>
+          </Input>
+          <br>
+          <Input ref="pass" placeholder='Password' :type='password' cssColorBorder='greenBorder' cssColor='greenColor'
+            lable='Password'>
+          <template #left>
+            <lock-outlined />
+          </template>
+          <template #right>
+            <span v-if="isShowPass" @click="ShowPass('password')"><eye-outlined /></span>
+            <span v-if="!isShowPass" @click="ShowPass('text')"><eye-invisible-outlined /></span>
+          </template>
+          </Input>
+          <br>
+          <Input ref="repass" v-if="!loginOrSingin" placeholder='retype password' :type='password'
+            cssColorBorder='greenBorder' cssColor='greenColor' lable='Confirm password'>
+          <template #left>
+            <lock-outlined />
+          </template>
+          <template #right>
+            <!-- <span v-if="isShowPass"><eye-outlined /></span>
+            <span v-if="!isShowPass"><eye-invisible-outlined /></span> -->
+          </template>
+          </Input>
+          <br>
+        </div>
+
         <p class="infor-contain_accept" v-if="!loginOrSingin">
           Bằng việc đăng ký tài khoản, bạn đã đồng ý với
           <a href="#"><b>Điều khoản dịch vụ</b></a> và
           <a href="#"><b>Chính sách bảo mật</b></a> của chúng tôi
         </p>
         <div class="infor-contain_login">
-          <Button content="Đăng nhập" nodataCSS="btn_green" />
+          <Button content="Đăng nhập" nodataCSS="btn_green" @click="submitLogin" />
           <p>Hoặc</p>
           <div class="infor-contain_login-social">
             <button class="facebook btn_green">
@@ -64,24 +102,45 @@ import {
   GoogleOutlined,
   FacebookOutlined,
   AppleOutlined,
+  MailOutlined,
+  LockOutlined,
+  EyeOutlined,
+  EyeInvisibleOutlined,
+  UserOutlined
 } from '@ant-design/icons-vue';
 import './login.scss';
 import drawer from '@/components/Carousel/carousel.vue';
-import FromLogin from './component/FromLogin.vue';
 import Button from '@/components/Button/Button.vue';
+import Input from "@/components/input/Input.vue"
 export default {
-  components: {
-    drawer,
-    FromLogin,
-    GoogleOutlined,
-    FacebookOutlined,
-    AppleOutlined,
-    Button,
-  },
   data() {
     return {
       loginOrSingin: true,
+      isShowPass: false,
+      password: 'password',
+      form: {
+        name: '',
+        email: '',
+        password: '',
+      }
     };
+  },
+  methods: {
+    submitLogin() {
+      if (this.loginOrSingin) {
+        console.log(this.$refs.email.value);
+        console.log(this.$refs.pass.value);
+      } else {
+        console.log(this.$refs.name.value);
+        console.log(this.$refs.email.value);
+        console.log(this.$refs.pass.value);
+        console.log(this.$refs.repass.value);
+      }
+    },
+    ShowPass(state) {
+      this.isShowPass = !this.isShowPass
+      this.password = state
+    }
   },
   created() {
     if (this.$route.name == 'login') {
@@ -90,6 +149,19 @@ export default {
     if (this.$route.name == 'sign-up') {
       this.loginOrSingin = false;
     }
+  },
+  components: {
+    drawer,
+    GoogleOutlined,
+    FacebookOutlined,
+    AppleOutlined,
+    Button,
+    Input,
+    MailOutlined,
+    LockOutlined,
+    EyeInvisibleOutlined,
+    EyeOutlined,
+    UserOutlined,
   },
 };
 </script>
