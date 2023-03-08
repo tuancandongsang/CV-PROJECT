@@ -107,7 +107,9 @@
         </div>
         <div>
           <h3><b>Vùng</b> <router-link to="/">(Giải thích):</router-link></h3>
-          <h3>select</h3>
+          <div>
+            <SelectOption placeholder="Chọn vùng" :options="region" />
+          </div>
         </div>
       </div>
       <div class="submit">
@@ -147,7 +149,19 @@
         rõ ràng tại Điều 50, Luật Việc làm năm 2013, cụ thể cách tính mức hưởng
         bảo hiểm thất nghiệp như sau:
       </p>
-      <h1>bangr........</h1>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Mức hưởng hàng tháng</th>
+            <th>=</th>
+            <th>
+              Mức trung bình tiền lương đóng bảo hiểm thất nghiệp hàng tháng của
+              06 tháng gần nhất trước khi thất nghiệp
+            </th>
+            <th>* 60%</th>
+          </tr>
+        </table>
+      </div>
       <p>
         Mức hưởng lương hàng tháng tối đa không quá 5 lần mức lương cơ sở với
         người lao động thực hiện chế độ lương theo quy định của Nhà nước, hoặc
@@ -402,11 +416,23 @@
 
 <script>
 import "./baohiemthatnghiep.scss";
-import { PoundOutlined, CalendarOutlined } from "@ant-design/icons-vue";
+import {
+  PoundOutlined,
+  CalendarOutlined,
+  BulbOutlined,
+} from "@ant-design/icons-vue";
 import Button from "@/components/Button/Button.vue";
 import Input from "@/components/input/Input.vue";
+import SelectOption from "@/components/SelectOption/SelectOptionBase.vue";
 export default {
-  components: { Button, Input, PoundOutlined, CalendarOutlined },
+  components: {
+    Button,
+    Input,
+    PoundOutlined,
+    CalendarOutlined,
+    SelectOption,
+    BulbOutlined,
+  },
   methods: {
     calculate() {
       console.log(this.salary6month);
@@ -417,6 +443,16 @@ export default {
   },
   data() {
     return {
+      region: [
+        {
+          value: "jack",
+          label: "Jack",
+        },
+        {
+          value: "tuan",
+          label: "tuan",
+        },
+      ],
       salary: undefined,
       month: undefined,
       salary6month: "",
@@ -426,5 +462,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
