@@ -283,5 +283,19 @@
   
 <script>
 import "./baohiemxahoi.scss";
-export default {};
+export default {
+  data() {
+    return {
+      year: ['Năm', 'Trước 1995'],
+      interest: ['Mức điều chỉnh', 5.1]
+    }
+  },
+  created() {
+    for (let i = 1995; i < 2023; i++) {
+      this.year.push(i)
+    }
+    console.log(this.year);
+
+  },
+};
 </script>
