@@ -30,7 +30,58 @@
                     }
 
                 }
+
+                .selected {
+                    color: $text-green;
+                    border-bottom: 1px solid $text-green;
+                }
             }
+
+            #bhxh {
+                .title {
+                    padding: 20px 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        border: none;
+                    }
+
+                    &-right {
+                        display: flex;
+                        gap: 20px;
+                    }
+                }
+
+                .select {
+                    &-item {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                .submit {
+                    padding-top: 16px;
+                    margin-top: 16px;
+                    border-top: 1px solid $border-grey;
+                    display: flex;
+                    gap: 20px;
+
+                    &-item {
+                        width: 25%;
+                    }
+                }
+
+            }
+
+        }
+
+        &-submit {
+            margin-top: 16px;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid $border-grey;
         }
     }
 
@@ -38,6 +89,29 @@
         a {
             b {
                 color: $text-green;
+            }
+        }
+
+        .table {
+            padding: 8px 0;
+            overflow-x: auto;
+
+            table {
+                color: #212529;
+                margin-bottom: 1rem;
+                vertical-align: top;
+                width: 100%;
+
+                tr {
+                    display: table-row;
+
+                    td,
+                    th {
+                        border: 1px solid $border-grey;
+                        padding: 0 8px;
+                        text-align: center;
+                    }
+                }
             }
         }
     }
