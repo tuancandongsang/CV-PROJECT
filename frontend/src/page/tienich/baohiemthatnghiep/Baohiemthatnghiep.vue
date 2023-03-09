@@ -105,10 +105,10 @@
             <label for="individual">Doanh nghiệp tư nhân</label><br />
           </div>
         </div>
-        <div>
+        <div class="region">
           <h3><b>Vùng</b> <router-link to="/">(Giải thích):</router-link></h3>
           <div>
-            <SelectOption placeholder="Chọn vùng" :options="region" />
+            <SelectOption placeholder="Chọn vùng" :options="region" ref="region" />
           </div>
         </div>
       </div>
@@ -439,18 +439,27 @@ export default {
       console.log(this.company);
       console.log(this.$refs.salary.value);
       console.log(this.$refs.month.value);
+      console.log(this.$refs.region.value);
     },
   },
   data() {
     return {
       region: [
         {
-          value: "jack",
-          label: "Jack",
+          value: 1,
+          label: "Vùng 1",
         },
         {
-          value: "tuan",
-          label: "tuan",
+          value: 2,
+          label: "Vùng 2",
+        },
+        {
+          value: 3,
+          label: "Vùng 3",
+        },
+        {
+          value: 4,
+          label: "Vùng 4",
         },
       ],
       salary: undefined,

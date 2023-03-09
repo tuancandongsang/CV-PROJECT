@@ -1,6 +1,5 @@
 <!--
-type="text"
-placeholder="text"
+type="text" placeholder="text"
  -->
 
 <template>

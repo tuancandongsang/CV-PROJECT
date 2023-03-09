@@ -8,31 +8,34 @@
         </div>
         <div class="select">
             <div class="select-item">
-                <div>thang</div>
-                <div>nam</div>
-                <div>den</div>
-                <div>thang</div>
-                <div>nam</div>
-                <div>tien</div>
-                <div>xoa</div>
-            </div>
-            <div class="select-item">
-                <div>thang</div>
-                <div>nam</div>
-                <div>den</div>
-                <div>thang</div>
-                <div>nam</div>
-                <div>tien</div>
-                <div>xoa</div>
-            </div>
-            <div class="select-item">
-                <div>thang</div>
-                <div>nam</div>
-                <div>den</div>
-                <div>thang</div>
-                <div>nam</div>
-                <div>tien</div>
-                <div>xoa</div>
+                <div>
+                    <SelectOptionBase placeholder="Chọn tháng" :options="options" />
+                </div>
+                <div>
+                    <SelectOptionBase placeholder="Chọn Năm" :options="options" />
+                </div>
+                <div>Đến</div>
+                <div>
+                    <SelectOptionBase placeholder="Chọn tháng" :options="options" />
+                </div>
+                <div>
+                    <SelectOptionBase placeholder="Chọn Năm" :options="options" />
+                </div>
+
+                <div>
+                    <Input placeholder='VD: 5,000,000' type='number' cssColorBorder='greenBorder' cssColor='greenColor'
+                        lable=''>
+                    <template #left>
+                        <pay-circle-outlined />
+                    </template>
+                    <template #right>
+                        <span>VND</span>
+                    </template>
+                    </Input>
+                </div>
+                <div>
+                    <delete-outlined />
+                </div>
             </div>
         </div>
         <div class="submit">
@@ -46,9 +49,12 @@
     </div>
 </template>
 <script>
+import { PayCircleOutlined, DeleteOutlined } from "@ant-design/icons-vue";
 import Button from '@/components/Button/Button.vue'
+import SelectOptionBase from '../../../../components/SelectOption/SelectOptionBase.vue';
+import Input from '../../../../components/input/Input.vue'
 export default {
-    components: { Button }
+    components: { Button, SelectOptionBase, Input, PayCircleOutlined, DeleteOutlined }
 
 }
 </script>
