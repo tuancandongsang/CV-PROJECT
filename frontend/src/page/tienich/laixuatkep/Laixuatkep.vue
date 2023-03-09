@@ -91,7 +91,12 @@
               <p>Kỳ hạn nhận lãi tiền gửi của bạn.</p>
             </div>
             <div class="main-recipe-form-item-detail-input">
-              <SelectOption :option="optionSelectTimeB4" ref="SelectOption" />
+              <SelectOption
+                placeholder="Chọn thời gian"
+                :options="optionSelectTimeB4"
+                :disabled="false"
+                ref="SelectOption"
+              />
             </div>
           </div>
         </div>
@@ -297,7 +302,7 @@ import { PoundOutlined } from "@ant-design/icons-vue";
 import Button from "@/components/Button/Button.vue";
 import Input from "@/components/input/Input.vue";
 
-import SelectOption from "@/components/SelectOption/SelectOption.vue";
+import SelectOption from "@/components/SelectOption/SelectOptionBase.vue";
 export default {
   components: { Button, SelectOption, Input, PoundOutlined },
   data() {

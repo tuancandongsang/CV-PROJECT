@@ -1,3 +1,130 @@
 @import "@/styles/index.scss";
 
-#thunhapcanhan {}
+#thunhapcanhan {
+    .calculation-table {
+        .apply {
+            display: flex;
+            background-color: $bg-app;
+            padding: 12px;
+            gap: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+
+            &-icon {
+                color: $text-green;
+            }
+
+            p {
+                text-align: justify;
+            }
+        }
+
+        .reduce {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            .item {
+                background-color: $bg-app;
+                border-radius: 4px;
+                padding: 12px;
+                flex: 1;
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .input-money {
+            &-input {
+                width: 50%;
+            }
+        }
+
+        .insurance-money {
+            margin-bottom: 20px;
+
+            .title {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 20px 0 4px 0;
+            }
+
+            &-radio {
+                margin-bottom: 4px;
+
+                label {
+                    margin-left: 8px;
+                }
+            }
+
+            &-input {
+                width: 50%;
+            }
+        }
+
+        .region {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .title {
+                a {
+                    color: $text-error;
+                    font-size: 0.8rem;
+                }
+            }
+
+            label {
+                margin-left: 4px;
+            }
+        }
+
+        .dependent-people {
+            margin-bottom: 30px;
+
+            &-input {
+                width: 50%;
+
+            }
+        }
+
+        .calculate {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 20px;
+
+            &-button {
+                width: 50%;
+            }
+        }
+    }
+
+    .explain {
+        .box {
+            background-color: $bg-white;
+            padding: 20px;
+            margin: 8px 0;
+            border: 1px dashed $border-grey;
+
+            p {
+                text-align: center;
+                font-size: 16px;
+            }
+        }
+
+        p {
+            margin-bottom: 4px;
+        }
+
+        .warning {
+            color: $text-error;
+        }
+
+        .img {
+            cursor: pointer;
+        }
+    }
+}

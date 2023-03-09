@@ -1,5 +1,5 @@
 <!-- 
-    placeholder="placeholder" :options="options"
+    placeholder="placeholder" :options="options" :disabled="false"
 type options
     options : [
       {
@@ -13,6 +13,7 @@ type options
   <a-select
     v-model:value="value"
     show-search
+    :disabled="disabled"
     :placeholder="placeholder"
     style="width: 100%"
     :options="options"
@@ -30,7 +31,7 @@ export default defineComponent({
     BulbOutlined,
   },
   setup() {
-    const props = defineProps(["options", "placeholder"]);
+    const props = defineProps(["options", "placeholder", "disabled"]);
     const handleChange = (value) => {
       console.log(`selected ${value}`);
     };

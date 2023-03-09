@@ -108,7 +108,12 @@
         <div class="region">
           <h3><b>Vùng</b> <router-link to="/">(Giải thích):</router-link></h3>
           <div>
-            <SelectOption placeholder="Chọn vùng" :options="region" ref="region" />
+            <SelectOption
+              placeholder="Chọn vùng"
+              :options="region"
+              ref="region"
+              :disabled="isSelectRegion"
+            />
           </div>
         </div>
       </div>
@@ -465,8 +470,16 @@ export default {
       salary: undefined,
       month: undefined,
       salary6month: "",
-      company: "",
+      company: "government",
+      isSelectRegion: true,
     };
+  },
+  computed: {
+    isSelectRegion() {
+      if (this.company === "individual") {
+        return (this.isSelectRegion = false);
+      } else return (this.isSelectRegion = true);
+    },
   },
 };
 </script>

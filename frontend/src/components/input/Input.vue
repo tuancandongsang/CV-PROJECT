@@ -1,5 +1,5 @@
 <!-- 
-  <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable=''>
+  <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable='' :disabled='false'>
     <template #left>
       
     </template>
@@ -10,12 +10,17 @@
  -->
 <template>
   <div id="input">
-    <label for="">{{ lable }}</label>
+    <label for="" class="label">{{ lable }}</label>
     <div class="input-container" :class="cssColorBorder">
       <div :class="cssColor">
         <slot name="left"></slot>
       </div>
-      <input :type="type" v-model="value" :placeholder="placeholder" />
+      <input
+        :type="type"
+        v-model="value"
+        :placeholder="placeholder"
+        :disabled="disabled"
+      />
       <div :class="cssColor">
         <slot name="right"></slot>
       </div>
@@ -25,7 +30,14 @@
 
 <script>
 export default {
-  props: ["placeholder", "type", "cssColorBorder", "cssColor", "lable"],
+  props: [
+    "placeholder",
+    "type",
+    "cssColorBorder",
+    "cssColor",
+    "lable",
+    "disabled",
+  ],
   data() {
     return {
       value: "",
@@ -94,4 +106,10 @@ export default {
       margin: 0;
     }
   }
-}</style>
+  .label {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+}
+</style>
