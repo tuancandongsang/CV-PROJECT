@@ -21,13 +21,13 @@
         </div>
       </div>
       <div class="input-money">
+        <h3><b>Thu Nhập (Gross)</b></h3>
         <div class="input-money-input">
           <Input
             placeholder="VD: 10,000,000"
             type="number"
             cssColorBorder="greenBorder"
             cssColor="greenColor"
-            lable="Thu Nhập (Gross)"
             ref="monthlySalary"
           >
             <template #left>
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="insurance-money">
-        <div class="title">Mức lương đóng bảo hiểm</div>
+        <div class="title"><h3><b>Mức lương đóng bảo hiểm</b></h3></div>
         <div class="insurance-money-radio">
           <input
             type="radio"
@@ -103,6 +103,7 @@
       </div>
       <div class="dependent-people">
         <div class="dependent-people-input">
+          <h3><b>Số người phụ thuộc</b></h3>
           <Input
             placeholder="0"
             type="number"

@@ -12,16 +12,18 @@
       </div>
       <div class="infor-contain">
         <div class="infor-contain-input">
-          <Input ref="email" placeholder='tuancandongsang@gmail.com' type='text' cssColorBorder='greenBorder' cssColor='greenColor'
-            lable='Email'>
+          <br>
+          <h4><b>Email</b></h4>
+          <Input ref="email" placeholder='tuancandongsang@gmail.com' type='text' cssColorBorder='greenBorder' cssColor='greenColor'>
           <template #left>
             <mail-outlined />
           </template>
           <template #right>
           </template>
           </Input>
-          <Input ref="pass" placeholder='123456' :type='password' cssColorBorder='greenBorder' cssColor='greenColor'
-            lable='Password'>
+          <br>
+          <h4><b>Password</b></h4>
+          <Input ref="pass" placeholder='123456' :type='password' cssColorBorder='greenBorder' cssColor='greenColor'>
           <template #left>
             <lock-outlined />
           </template>
@@ -31,9 +33,11 @@
           </template>
           </Input>
         </div>
+        <br>
         <div class="infor-contain_login">
           <Button content="Đăng nhập" nodataCSS="btn_green" @click="submitLoginTuyendung" />
         </div>
+        <br>
         <div class="infor-contain_forget">
           <p>
             Bạn chưa có tài khoản? <router-link to="/signup-tuyendung"><B>Đăng ký ngay</B></router-link>

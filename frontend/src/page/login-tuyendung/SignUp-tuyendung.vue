@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <Modal :visible="visible" :textOpenModal="textOpenModal" :btn_css="btn_css" ref="modal"> -->
-    <Modal :visible="false" :textOpenModal="textOpenModal" :btn_css="btn_css" ref="modal">
+    <Modal :visible="visible" :textOpenModal="textOpenModal" :btn_css="btn_css" ref="modal">
 
       <div class="modal-singup_tuyendung">
         <div class="modal-singup_tuyendung-header">
@@ -145,7 +144,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Họ và tên:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='Pham The Anh' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable=''>
+                <Input placeholder='Pham The Anh' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
                 <template #left>
                   <user-add-outlined />
                 </template>
@@ -158,7 +157,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Số điện thoại cá nhân:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='' type='number' cssColorBorder='greenBorder' cssColor='greenColor' lable=''>
+                <Input placeholder='xxxx' type='number' cssColorBorder='greenBorder' cssColor='greenColor' >
                 <template #left>
                   <phone-outlined />
                 </template>
@@ -182,7 +181,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Công ty:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable=''>
+                <Input placeholder='CMC' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
                 <template #left>
                   <shop-outlined />
                 </template>
@@ -214,7 +213,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Skype:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable=''>
+                <Input placeholder='alo@skype' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
                 <template #left>
                   <skype-outlined />
                 </template>
@@ -288,8 +287,6 @@ export default {
     return {
       isShowPass: false,
       password: 'password',
-
-
       isShowInfor: true,
       visible: true,
       textOpenModal: '',

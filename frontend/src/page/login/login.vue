@@ -14,41 +14,50 @@
       <div class="infor-contain">
         <div class="components-input-demo-presuffix">
           <br>
-          <Input ref="name" v-if="!loginOrSingin" placeholder='Nguyen Van A' type='text' cssColorBorder='greenBorder'
-            cssColor='greenColor' lable='Full Name'>
-          <template #left>
-            <user-outlined />
-          </template>
-          </Input>
+          <div v-if="!loginOrSingin">
+            <h4><b>Full Name</b></h4>
+            <Input ref="name" placeholder='Nguyen Van A' type='text' cssColorBorder='greenBorder' cssColor='greenColor'>
+            <template #left>
+              <user-outlined />
+            </template>
+            </Input>
+          </div>
           <br>
-          <Input ref="email" placeholder='Nhập email' type='text' cssColorBorder='greenBorder' cssColor='greenColor'
-            lable='Email'>
-          <template #left>
-            <mail-outlined />
-          </template>
-          </Input>
+          <div>
+            <h4><b>Email</b></h4>
+            <Input ref="email" placeholder='Nhập email' type='text' cssColorBorder='greenBorder' cssColor='greenColor'>
+            <template #left>
+              <mail-outlined />
+            </template>
+            </Input>
+          </div>
           <br>
-          <Input ref="pass" placeholder='Password' :type='password' cssColorBorder='greenBorder' cssColor='greenColor'
-            lable='Password'>
-          <template #left>
-            <lock-outlined />
-          </template>
-          <template #right>
-            <span v-if="isShowPass" @click="ShowPass('password')"><eye-outlined /></span>
-            <span v-if="!isShowPass" @click="ShowPass('text')"><eye-invisible-outlined /></span>
-          </template>
-          </Input>
+          <div>
+            <h4><b>Pass word</b></h4>
+            <Input ref="pass" placeholder='Password' :type='password' cssColorBorder='greenBorder' cssColor='greenColor'>
+            <template #left>
+              <lock-outlined />
+            </template>
+            <template #right>
+              <span v-if="isShowPass" @click="ShowPass('password')"><eye-outlined /></span>
+              <span v-if="!isShowPass" @click="ShowPass('text')"><eye-invisible-outlined /></span>
+            </template>
+            </Input>
+          </div>
           <br>
-          <Input ref="repass" v-if="!loginOrSingin" placeholder='retype password' :type='password'
-            cssColorBorder='greenBorder' cssColor='greenColor' lable='Confirm password'>
-          <template #left>
-            <lock-outlined />
-          </template>
-          <template #right>
-            <!-- <span v-if="isShowPass"><eye-outlined /></span>
+          <div v-if="!loginOrSingin">
+            <h4><b>Repeate password</b></h4>
+            <Input ref="repass" placeholder='repeate password' :type='password' cssColorBorder='greenBorder'
+              cssColor='greenColor'>
+            <template #left>
+              <lock-outlined />
+            </template>
+            <template #right>
+              <!-- <span v-if="isShowPass"><eye-outlined /></span>
             <span v-if="!isShowPass"><eye-invisible-outlined /></span> -->
-          </template>
-          </Input>
+            </template>
+            </Input>
+          </div>
           <br>
         </div>
 

@@ -1,5 +1,5 @@
 <!-- 
-  <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' lable='' :disabled='false'>
+  <Input placeholder='' type='' cssColorBorder='greenBorder' cssColor='greenColor' :disabled='false'>
     <template #left>
       
     </template>
@@ -10,7 +10,6 @@
  -->
 <template>
   <div id="input">
-    <label for="" class="label">{{ lable }}</label>
     <div class="input-container" :class="cssColorBorder">
       <div :class="cssColor">
         <slot name="left"></slot>
@@ -35,7 +34,6 @@ export default {
     "type",
     "cssColorBorder",
     "cssColor",
-    "lable",
     "disabled",
   ],
   data() {
