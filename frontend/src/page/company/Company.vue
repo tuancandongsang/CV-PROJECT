@@ -6,10 +6,10 @@
           <div class="company-header_infor">
             <div class="company-header_infor-list">
               <ul>
-                <li @click="() => changeTopOrList('list')" :class="showTopOrList === 'list' ? 'showTypeCompany' : ''">
+                <li @click="() => changeTopOrList('ListCompany')" :class="showTopOrList === 'ListCompany' ? 'showTypeCompany' : ''">
                   <router-link to="/list-company"><span style="color: black">Danh sách công ty</span></router-link>
                 </li>
-                <li @click="() => changeTopOrList('top')" :class="showTopOrList === 'top' ? 'showTypeCompany' : ''">
+                <li @click="() => changeTopOrList('TopCompany')" :class="showTopOrList === 'TopCompany' ? 'showTypeCompany' : ''">
                   <router-link to="/top-company"><span style="color: black"> Top công ty</span></router-link>
                 </li>
               </ul>
@@ -41,10 +41,10 @@
         </div>
       </div>
       <div class="company-main">
-        <h2 class="company-main-title" v-if="showTopOrList === 'top' ? true : false">
+        <h2 class="company-main-title"  v-if="showTopOrList === 'TopCompany'">
           DANH SÁCH CÁC TOP CÔNG TY
         </h2>
-        <h2 class="company-main-title" v-if="showTopOrList === 'list' ? true : false">
+        <h2 class="company-main-title" v-if="showTopOrList === 'ListCompany'">
           DANH SÁCH CÁC CÔNG TY NỔI BẬT
         </h2>
         <div class="company-main-body">
@@ -81,9 +81,18 @@ export default {
       this.showTopOrList = text;
     },
   },
+  created() {
+    this.showTopOrList = this.$route.name
+    this.$watch(
+      () => this.$route.name,
+      (toParams, previousParams) => {
+        this.showTopOrList = toParams
+      }
+    )
+  },
   data() {
     return {
-      showTopOrList: 'top',
+      showTopOrList: '',
       listTopCompany: [
         {
           url: 'https://static.topcv.vn/top_lists/ee42f870851bdb21f12e43aa0e58e8c3-5c3c0721000a4.jpg',

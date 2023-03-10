@@ -126,5 +126,19 @@
         .img {
             cursor: pointer;
         }
+
+        .table {
+            table {
+                width: 100%;
+                margin: 10px 0;
+
+                th,
+                td {
+                    border: 1px solid $border-grey;
+                    text-align: center;
+                    padding: 8px 0;
+                }
+            }
+        }
     }
 }

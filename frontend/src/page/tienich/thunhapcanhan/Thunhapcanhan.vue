@@ -23,60 +23,38 @@
       <div class="input-money">
         <h3><b>Thu Nhập (Gross)</b></h3>
         <div class="input-money-input">
-          <Input
-            placeholder="VD: 10,000,000"
-            type="number"
-            cssColorBorder="greenBorder"
-            cssColor="greenColor"
-            ref="monthlySalary"
-          >
-            <template #left>
-              <PoundOutlined />
-            </template>
-            <template #right>
-              <span>VND</span>
-            </template>
+          <Input placeholder="VD: 10,000,000" type="number" cssColorBorder="greenBorder" cssColor="greenColor"
+            ref="monthlySalary">
+          <template #left>
+            <PoundOutlined />
+          </template>
+          <template #right>
+            <span>VND</span>
+          </template>
           </Input>
         </div>
       </div>
       <div class="insurance-money">
-        <div class="title"><h3><b>Mức lương đóng bảo hiểm</b></h3></div>
+        <div class="title">
+          <h3><b>Mức lương đóng bảo hiểm</b></h3>
+        </div>
         <div class="insurance-money-radio">
-          <input
-            type="radio"
-            id="declare"
-            name="salary"
-            value="declare"
-            v-model="salary"
-          />
+          <input type="radio" id="declare" name="salary" value="declare" v-model="salary" />
           <label for="declare">Trên lương chính thức</label><br />
         </div>
         <div class="insurance-money-radio">
-          <input
-            type="radio"
-            id="other"
-            name="salary"
-            value="other"
-            v-model="salary"
-          />
+          <input type="radio" id="other" name="salary" value="other" v-model="salary" />
           <label for="other">Khác</label><br />
         </div>
         <div class="insurance-money-input">
-          <Input
-            :disabled="disabledInputSaralyInsurance"
-            placeholder="VD: 10,000,000"
-            type="number"
-            cssColorBorder="greenBorder"
-            cssColor="greenColor"
-            lable="Thu Nhập (Gross)"
-            ref="otherMonthlySalary"
-          >
-            <template #left>
-              <PoundOutlined />
-            </template>
-            <template #right>
-              <span>VND</span>
-            </template>
+          <Input :disabled="disabledInputSaralyInsurance" placeholder="VD: 10,000,000" type="number"
+            cssColorBorder="greenBorder" cssColor="greenColor" lable="Thu Nhập (Gross)" ref="otherMonthlySalary">
+          <template #left>
+            <PoundOutlined />
+          </template>
+          <template #right>
+            <span>VND</span>
+          </template>
           </Input>
         </div>
       </div>
@@ -104,31 +82,20 @@
       <div class="dependent-people">
         <div class="dependent-people-input">
           <h3><b>Số người phụ thuộc</b></h3>
-          <Input
-            placeholder="0"
-            type="number"
-            cssColorBorder="greenBorder"
-            cssColor="greenColor"
-            lable="Số người phụ thuộc"
-            :disabled="false"
-            ref="dependentPeople"
-          >
-            <template #left>
-              <team-outlined />
-            </template>
-            <template #right>
-              <span>Người</span>
-            </template>
+          <Input placeholder="0" type="number" cssColorBorder="greenBorder" cssColor="greenColor"
+            lable="Số người phụ thuộc" :disabled="false" ref="dependentPeople">
+          <template #left>
+            <team-outlined />
+          </template>
+          <template #right>
+            <span>Người</span>
+          </template>
           </Input>
         </div>
       </div>
       <div class="calculate">
         <div class="calculate-button">
-          <Button
-            @click="calculateTax"
-            content="Tính thuế TNCN"
-            btn_css="btn_green"
-          />
+          <Button @click="calculateTax" content="Tính thuế TNCN" btn_css="btn_green" />
         </div>
       </div>
     </div>
@@ -138,11 +105,9 @@
         <h1>Mục lục:</h1>
       </div>
       <p>
-        <i
-          >Thuế thu nhập cá nhân là gì? Tại sao cần đóng thuế thu nhập cá nhân?
+        <i>Thuế thu nhập cá nhân là gì? Tại sao cần đóng thuế thu nhập cá nhân?
           Công thức tính thuế thu nhập cá nhân như thế nào? Những thắc mắc liên
-          quan tới thuế thu nhập cá nhân bạn cần nắm rõ.</i
-        >
+          quan tới thuế thu nhập cá nhân bạn cần nắm rõ.</i>
       </p>
       <h3>Thuế thu nhập cá nhân là gì?</h3>
       <p>
@@ -241,15 +206,48 @@
         Thuế suất từ tiền lương, tiền công đối với đối tượng ký hợp đồng lao
         động từ 03 tháng trở lên được áp dụng theo lũy tiến từng phần, cụ thể:
       </p>
-      <div>
-        <h1>bang...</h1>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Bậc</th>
+            <th>Phần thu nhập tính thuế/năm <br>
+              (triệu đồng)</th>
+            <th>Phần thu nhập tính thuế/tháng <br>
+              (triệu đồng)</th>
+            <th>Thuế suất (%)</th>
+          </tr>
+          <tr v-for="item in tableRankBasic1" :key="item.rank">
+            <td>{{ item.rank }} </td>
+            <td>{{ item.saraly }} </td>
+            <td>{{ item.taxMoney }}</td>
+            <td>{{ item.tax }}</td>
+          </tr>
+        </table>
       </div>
       <p>
         Có thêm tham khảo thêm công thức tính thuế thu nhập cá nhân rút gọn,
         công thức tính thuế thu nhập cá nhân chuẩn tại bảng dưới đây:
       </p>
-      <div>
-        <h1>bang...2</h1>
+      <div class="table">
+        <table>
+          <tr>
+            <th rowspan="2">Bậc</th>
+            <th rowspan="2">Thu nhập tính thuế/tháng</th>
+            <th rowspan="2">Thuế suất</th>
+            <th colspan="2">Tính số thuế phải nộp</th>
+          </tr>
+          <tr>
+            <th>Cách 1</th>
+            <th>Cách 2</th>
+          </tr>
+          <tr v-for="item in tableRankBasic2" :key="item.rank">
+            <td>{{ item.rank }} </td>
+            <td>{{ item.saraly }} </td>
+            <td>{{ item.tax }}</td>
+            <td>{{ item.taxMoney1 }}</td>
+            <td>{{ item.taxMoney2 }}</td>
+          </tr>
+        </table>
       </div>
       <h4><b>* Mức lương bao nhiêu phải nộp thuế?</b></h4>
       <p>
@@ -262,8 +260,21 @@
         Bạn có thể tham khảo bảng mức thu nhập phải nộp thuế trong bảng dưới
         đây:
       </p>
-      <div>
-        <h1>bang...</h1>
+      <div class="table">
+        <table>
+          <tr>
+            <th>STT</th>
+            <th>Số người phụ thuộc</th>
+            <th>Thu nhập từ tiền công, tiền <br> lương/tháng</th>
+            <th>Tổng thu nhập từ tiền công, tiền <br> lương/năm</th>
+          </tr>
+          <tr v-for="item in tableRankBasic3" :key="item.rank">
+            <td>{{ item.rank }} </td>
+            <td>{{item.peopleDependent}} </td>
+            <td>{{item.saralyMonth}}</td>
+            <td>{{item.saralyYear}}</td>
+          </tr>
+        </table>
       </div>
       <p>
         <b>Lưu ý:</b> Phần thu nhập trong bảng là thu nhập đã trừ các khoản sau:
@@ -278,10 +289,8 @@
         cấp gửi xe.
       </p>
       <h4>
-        <b
-          >B. Đối với cá nhân không ký hợp đồng lao động hoặc ký hợp đồng lao
-          động dưới 3 tháng</b
-        >
+        <b>B. Đối với cá nhân không ký hợp đồng lao động hoặc ký hợp đồng lao
+          động dưới 3 tháng</b>
       </h4>
       <p>
         Công thức thuế thu nhập cá nhân đối với cá nhân không ký hợp đồng lao
@@ -317,12 +326,10 @@
         thu nhập đối với khoản tiền phí mua sản phẩm bảo hiểm có tích lũy.
       </p>
       <h4>
-        <b
-          >B. Công thức để xác định thu nhập chịu thuế TNCN từ tiền lương, tiền
+        <b>B. Công thức để xác định thu nhập chịu thuế TNCN từ tiền lương, tiền
           công tại Việt Nam trong trường hợp cá nhân không cư trú làm việc đồng
           thời cả ở Việt Nam cả ở nước ngoài nhưng không tách riêng được phần
-          thu nhập phát sinh tại Việt Nam</b
-        >
+          thu nhập phát sinh tại Việt Nam</b>
       </h4>
       <p>* Đối với cá nhân người nước ngoài không hiện diện tại Việt Nam</p>
       <div class="box">
@@ -433,11 +440,9 @@
       </p>
       <h4><b>Ví dụ: </b></h4>
       <p>
-        <i
-          >Lương của nhân viên thử việc hưởng 85% mức lương chính thức là
+        <i>Lương của nhân viên thử việc hưởng 85% mức lương chính thức là
           3.500.000 VNĐ sẽ bị khấu trừ 350.000 đồng => Lương thực nhận là
-          3.150.000 VNĐ.</i
-        >
+          3.150.000 VNĐ.</i>
       </p>
       <p>
         Thời điểm khấu trừ: Công ty sẽ khấu trừ thuế thu nhập cá nhân trước khi
@@ -460,26 +465,20 @@
       </p>
       <h4><b>Ví dụ:</b></h4>
       <p>
-        <i
-          >Ông Nguyễn Văn A có mức lương trả theo ngày làm việc bình thường là
-          100.000 đồng/giờ.</i
-        >
+        <i>Ông Nguyễn Văn A có mức lương trả theo ngày làm việc bình thường là
+          100.000 đồng/giờ.</i>
       </p>
       <p>
-        <i
-          >Theo quy định của công ty, người lao động làm thêm giờ vào ngày
+        <i>Theo quy định của công ty, người lao động làm thêm giờ vào ngày
           thường sẽ được trả 150.000 đồng/giờ. Do đó, mức thu nhập được miễn
           thuế thu nhập cá nhân là: 150.000 đồng - 100.000 đồng = 50.000
-          đồng/giờ</i
-        >
+          đồng/giờ</i>
       </p>
       <p>
-        <i
-          >Theo quy định của công ty, người lao động làm thêm giờ vào ngày nghỉ,
+        <i>Theo quy định của công ty, người lao động làm thêm giờ vào ngày nghỉ,
           hoặc ngày lễ sẽ được trả 200.000 đồng/giờ. Do đó, mức thu nhập được
           miễn thuế thu nhập cá nhân khi đó là: 200.000 đồng - 100.000 đồng =
-          100.000 đồng/giờ</i
-        >
+          100.000 đồng/giờ</i>
       </p>
       <p>
         Trên đây là những chia sẻ của chúng tôi về thuế thu nhập cá nhân và công
@@ -499,10 +498,7 @@
       </div>
       <div class="img">
         <router-link to="/">
-          <img
-            src="https://static.topcv.vn/manual/mau-cv-chuyen-nghiep-phu-hop-topcv.png"
-            alt=""
-          />
+          <img src="https://static.topcv.vn/manual/mau-cv-chuyen-nghiep-phu-hop-topcv.png" alt="" />
         </router-link>
       </div>
     </div>
@@ -527,6 +523,32 @@ export default {
       salary: "declare",
       region: "1",
       disabledInputSaralyInsurance: true,
+      tableRankBasic1: [
+        { rank: 1, taxMoney: "Đến 5", saraly: 'Đến 60', tax: 5 },
+        { rank: 2, taxMoney: "Trên 5 đến 10", saraly: 'Trên 60 đến 120', tax: 10 },
+        { rank: 3, taxMoney: "Trên 10 đến 18", saraly: 'Trên 120 đến 216', tax: 15 },
+        { rank: 4, taxMoney: "Trên 18 đến 32", saraly: 'Trên 216 đến 384', tax: 20 },
+        { rank: 5, taxMoney: "Trên 32 đến 52", saraly: 'Trên 384 đến 624', tax: 25 },
+        { rank: 6, taxMoney: "Trên 52 đến 80", saraly: 'Trên 624 đến 960', tax: 30 },
+        { rank: 7, taxMoney: "Trên 80", saraly: 'Trên 960', tax: 35 },
+      ],
+      tableRankBasic2: [
+        { rank: 1, taxMoney2: "  5% TNTT ", taxMoney1: "0 trđ + 5% TNTT", saraly: 'Đến 5 triệu đồng', tax: 5 },
+        { rank: 2, taxMoney2: "  10% TNTT - 0,25 trđ ", taxMoney1: "0,24 trđ + 10% TNTT trên 5 trđ", saraly: 'Trên 5 trđ đến 10 trđ', tax: 10 },
+        { rank: 3, taxMoney2: "15% TNTT - 0,75 trđ   ", taxMoney1: "0,75 trđ + 15% TNTT trên 10 trđ", saraly: 'Trên 10 trđ đến 18 trđ', tax: 15 },
+        { rank: 4, taxMoney2: "  20% TNTT - 1,65 trđ ", taxMoney1: "1,95 trđ + 20% TNTT trên 8 trđ", saraly: 'Trên 18 trđ đến 32 trđ', tax: 20 },
+        { rank: 5, taxMoney2: " 25% TNTT - 3,25 trđ  ", taxMoney1: "4,75 trđ + 25% TNTT trên 32 trđ", saraly: 'Trên 32 trđ đến 52 trđ', tax: 25 },
+        { rank: 6, taxMoney2: " 30% TNTT - 5,85 trđ  ", taxMoney1: "9,75 trđ + 30% TNTT trên 52 trđ", saraly: 'Trên 52 trđ đến 80 trđ', tax: 30 },
+        { rank: 7, taxMoney2: " 35% TNTT - 9,85 trđ  ", taxMoney1: "18,15 trđ + 35% TNTT trên 80 trđ", saraly: 'Trên 80 trđ', tax: 35 },
+
+      ],
+      tableRankBasic3: [
+        { rank: 1, saralyMonth: "> 11 triệu đồng", saralyYear: '> 132 triệu đồng', peopleDependent: "Không có người phụ thuộc" },
+        { rank: 2, saralyMonth: "> 15,4 triệu đồng", saralyYear: '> 184,8 triệu đồng', peopleDependent: "Có 1 người phụ thuộc" },
+        { rank: 3, saralyMonth: "> 19,8 triệu đồng", saralyYear: '> 237,6 triệu đồng', peopleDependent: 'Có 2 người phụ thuộc' },
+        { rank: 4, saralyMonth: "> 24,2 triệu đồng", saralyYear: '> 290,4 triệu đồng', peopleDependent: 'Có 3 người phụ thuộc' },
+        { rank: 5, saralyMonth: "> 28,4 triệu đồng", saralyYear: '> 343,2 triệu đồng', peopleDependent: 'Có 4 người phụ thuộc' },
+      ],
     };
   },
   methods: {

@@ -15,7 +15,7 @@ type options
     show-search
     :disabled="disabled"
     :placeholder="placeholder"
-    style="width: 100%"
+    style="min-width: 100px"
     :options="options"
     @focus="handleFocus"
     @blur="handleBlur"
