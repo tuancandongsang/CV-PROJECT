@@ -181,11 +181,11 @@ export default {
         cv: [
           {
             tittle: "Mẫu CV",
-            link: "/login",
+            link: "/hosocv/maucv",
           },
           {
             tittle: "Dịch vụ tư vấn Cv",
-            link: "/login",
+            link: "/hosocv/tuvancv",
           },
           {
             tittle: "Chuyển đổi Cv từ tiếng Việt sang tiếng nhật",

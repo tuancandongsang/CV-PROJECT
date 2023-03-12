@@ -32,6 +32,23 @@ export const router = createRouter({
           name: "ListCompany",
         },
         {
+          path: "/hosocv",
+          redirect: "/maucv",
+          name: "hosocv",
+          children: [
+            {
+              path: "maucv",
+              name: "maucv",
+              component: () => import("../page/hosocv/maucv/Maucv.vue"),
+            },
+            {
+              path: "tuvancv",
+              name: "tuvancv",
+              component: () => import("../page/hosocv/tuvancv/Tuvancv.vue"),
+            },
+          ],
+        },
+        {
           path: "/tienich",
           component: () => import("../page/tienich/LayoutTienich.vue"),
           name: "LayoutTienich",
