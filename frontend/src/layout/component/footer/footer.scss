@@ -1,0 +1,32 @@
+@import "@/styles/index.scss";
+
+#footer {
+    .container {
+        background-color: $bg-btn-grey;
+        color: $text-default;
+        display: flex;
+        justify-content: center;
+
+        .main {
+            width: 1100px;
+            margin: 80px 0;
+
+            .logo {
+                img {
+                    width: 300px;
+                }
+            }
+
+            .tittle {
+                color: $text-default;
+                font-size: 48px;
+                font-weight: 700;
+            }
+
+            .infor {
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
+}
