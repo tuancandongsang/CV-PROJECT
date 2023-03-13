@@ -144,6 +144,26 @@
         </div>
       </div>
     </div>
+    <div class="feel-custome">
+      <div class="background-img"></div>
+      <div class="main">
+        <p class="quote">REVIEW</p>
+        <h1>Cảm nhận của người dùng</h1>
+        <p class="vote">95% người tham gia dịch vụ chấm điểm 4 (hài lòng) tới 5 (rất hài lòng) về chất lượng dịch vụ sau
+          khi được tư vấn.</p>
+        <div class="detail">
+          <div class="avatar">avatar</div>
+          <div class="contain">
+            <p class="nname">Nguyễn Tuấn Anh </p>
+            <p class="start"> <a-rate v-model:value="value" /></p>
+            <p class="litter">" Đây là lần đầu tiên em được tư vấn review CV và hướng nghiệp. Quả thực sau buổi chia sẻ
+              này em đã hiểu ra được vì sao trước đây em apply lại tạch 😆 Cảm ơn thầy Tuấn Anh đã chia sẻ, không chỉ về
+              CV mà còn phần nào giúp em định hướng trong nghề nghiệp sau này "</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -158,6 +178,7 @@ export default {
   components: { Button, CheckCircleOutlined, DoubleRightOutlined },
   data() {
     return {
+      value: 2,
       optionRenderComponent: [
         {
           key: 1,
