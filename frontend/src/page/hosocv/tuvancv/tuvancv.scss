@@ -403,6 +403,256 @@
         }
     }
 
+    .feel-custome {
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+
+        .background-img-feel {
+            background-size: 100%;
+            background-attachment: scroll;
+            background-origin: content-box;
+            background-image: url('https://w.ladicdn.com/s700x1650/5eccf0a3fe0845247513b20a/b-01-20210716054848.png            ');
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .main {
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .quote-logo {
+                color: $text-purple-black;
+                font-size: 14px;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 5px;
+                line-height: 1.6;
+            }
+
+            .fell {
+                font-size: 34px;
+                font-weight: bold;
+
+                span {
+                    color: $text-green;
+                }
+            }
+
+            .vote {
+                color: $text-purple-black;
+                font-size: 16px;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            .detail {
+                width: 100%;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding: 20px 10px;
+                border-radius: 8px;
+                margin: 30px 0;
+                background-color: $bg-default;
+                z-index: 1;
+
+                .avatar {
+                    max-width: 100px;
+                    max-height: 100px;
+                    overflow: hidden;
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .contain {
+                    .name {
+                        font-weight: bold;
+                    }
+
+                    .start {}
+
+                    .litter {
+                        text-align: justify;
+                        color: $text-purple-black;
+                        font-size: 16px;
+                        text-align: left;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+
+    .register {
+        padding: 80px 0;
+        text-align: center;
+
+        .title {
+            font-size: 34px;
+            font-weight: bold;
+            color: $text-purple-black;
+            margin-bottom: 50px;
+
+        }
+
+        .cancel {
+            width: 100%;
+            height: 150x;
+            font-size: 30px;
+            font-weight: bold;
+            box-shadow: $btn-border 0px 7px 29px 0px;
+        }
+    }
+
+    .question {
+        background-color: $bg-grey-white;
+        position: relative;
+        width: 100%;
+
+        .main {
+            margin: 0 auto;
+            padding: 50px 0;
+
+            .logo-question {
+                white-space: 4px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .question-header {
+                font-size: 34px;
+                font-weight: bold;
+                color: $text-purple-black;
+                text-align: center;
+                margin-bottom: 60px;
+
+                span {
+                    color: $text-green;
+                }
+            }
+
+            .question-item {
+                width: 100%;
+                margin: 16px 0;
+
+                &-title {
+                    border-radius: 8px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px 16px;
+                    background-color: $bg-default;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    align-items: center;
+
+                    span {
+                        color: $text-green;
+                        font-size: 18px;
+                    }
+
+                }
+
+                .question-detail {}
+
+                .question-icon {}
+
+                .question-popup {
+                    width: 100%;
+                    padding: 16px 24px;
+                    border-top: 2px solid $bg-green;
+                    border-radius: 8px;
+                    margin-top: 8px;
+                    background-color: $bg-default;
+                }
+
+            }
+        }
+    }
+
+    .folow {
+        position: relative;
+        width: 100%;
+        background: linear-gradient(120deg, rgba(210, 250, 240, 1.0), rgba(255, 255, 255, 1.0));
+
+        .main {
+            margin: 0 auto;
+
+            .folow-quote {
+                letter-spacing: 5px;
+                color: $text-purple-black;
+                font-size: 14px;
+                text-transform: uppercase;
+                margin: 40px 0;
+            }
+
+            .folow-header {
+                font-size: 34px;
+                width: 60%;
+                font-weight: bold;
+            }
+
+            .folow-container {
+                // height: 500px;
+                margin: 40px 0;
+                background-color: $bg-green-light;
+                position: relative;
+                border-radius: 12px;
+
+
+                .folow-img {
+                    position: absolute;
+                    width: 600px;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    top: -100px;
+                    right: -150px;
+                    background-size: 100%;
+
+
+                    background-image: url("https://w.ladicdn.com/s950x600/5eccf0a3fe0845247513b20a/trang-chutopcvpng-1png-20211115035214.png");
+                }
+
+                .content {
+                    padding: 40px;
+                    width: 60%;
+
+                    h1 {
+                        font-weight: bold;
+                    }
+                }
+
+                .img-right {
+                    position: absolute;
+                    bottom: -80px;
+                    right: 0;
+                    width: 35%;
+                    height: 100%;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-image: url("https://w.ladicdn.com/s700x750/5eccf0a3fe0845247513b20a/hong_resize-20200907172317.png");
+                }
+            }
+        }
+    }
+
     .width {
         width: 1100px;
     }
