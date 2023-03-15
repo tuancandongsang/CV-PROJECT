@@ -13,7 +13,9 @@
         /></span>
       </p>
     </div>
-    <div class="question-popup" v-if="up === 'down'">litter pase</div>
+    <div class="question-popup" v-if="up === 'down'">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

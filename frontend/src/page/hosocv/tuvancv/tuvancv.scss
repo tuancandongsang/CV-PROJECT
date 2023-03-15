@@ -581,8 +581,9 @@
                     border-radius: 8px;
                     margin-top: 8px;
                     background-color: $bg-default;
+                    font-size: 16px;
+                    color: $text-purple-black;
                 }
-
             }
         }
     }
@@ -610,12 +611,10 @@
             }
 
             .folow-container {
-                // height: 500px;
                 margin: 40px 0;
                 background-color: $bg-green-light;
                 position: relative;
                 border-radius: 12px;
-
 
                 .folow-img {
                     position: absolute;
@@ -625,8 +624,6 @@
                     top: -100px;
                     right: -150px;
                     background-size: 100%;
-
-
                     background-image: url("https://w.ladicdn.com/s950x600/5eccf0a3fe0845247513b20a/trang-chutopcvpng-1png-20211115035214.png");
                 }
 
