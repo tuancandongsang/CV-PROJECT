@@ -1,3 +1,76 @@
 @import "@/styles/index.scss";
 
-#maucv {}
+#maucv {
+    width: 100%;
+    background-color: $bg-app;
+    position: relative;
+
+    .maucv {
+        position: relative;
+        margin: 0 auto;
+
+        .tittle {
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 50px;
+
+            img {
+                width: 24px;
+                height: 20px;
+            }
+        }
+
+        .selectTypeCv {
+            border-radius: 8px;
+            margin: 20px 0;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px;
+            background-color: $btn-default;
+
+            &-item {
+                label {
+                    margin-left: 4px;
+                }
+            }
+
+            .language {
+                width: 120px;
+            }
+
+            .typecv {
+                width: 350px;
+            }
+
+            .degisn {
+                width: 150px;
+            }
+        }
+
+        .select-builder {
+            display: flex;
+            justify-content: center;
+
+            &-item {
+                flex: 1;
+                text-align: center;
+                cursor: pointer;
+                padding: 12px 0;
+            }
+
+            .selected {
+                background-color: $btn-default;
+            }
+        }
+
+        .builder-container {
+            background-color: $btn-default;
+        }
+    }
+
+    .width {
+        width: 1100px;
+    }
+}

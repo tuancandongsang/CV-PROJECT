@@ -15,11 +15,12 @@ type options
     show-search
     :disabled="disabled"
     :placeholder="placeholder"
-    style="min-width: 100px"
+    style="width: 100%"
     :options="options"
     @focus="handleFocus"
     @blur="handleBlur"
     @change="handleChange"
+    class="alo"
   >
   </a-select>
 </template>
@@ -59,3 +60,8 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.alo {
+  font-weight: bold;
+}
+</style>
