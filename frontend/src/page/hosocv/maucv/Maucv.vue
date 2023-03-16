@@ -23,57 +23,182 @@
           <SelectOptionBase placeholder="Chọn mẫu thiết kế" :options="degisn" />
         </div>
         <div class="selectTypeCv-item">
-          <input
-            type="radio"
-            id="new"
-            name="styleCv"
-            value="new"
-            v-model="styleCv"
-          />
+          <input type="radio" id="new" name="styleCv" value="new" v-model="styleCv" />
           <label for="new">Mới cập nhật</label><br />
         </div>
         <div class="selectTypeCv-item">
-          <input
-            type="radio"
-            id="hot"
-            name="styleCv"
-            value="hot"
-            v-model="styleCv"
-          />
+          <input type="radio" id="hot" name="styleCv" value="hot" v-model="styleCv" />
           <label for="hot">Được dùng nhiều nhất</label><br />
         </div>
       </div>
       <div class="select-builder">
-        <div
-          class="select-builder-item"
-          :class="styleBuilder === 'builder2' ? 'selected' : ''"
-          @click="builder('builder2')"
-        >
+        <div class="select-builder-item" :class="styleBuilder === 'builder2' ? 'selected' : ''"
+          @click="builder('builder2')">
           CV Builder 2.0
         </div>
-        <div
-          class="select-builder-item"
-          :class="styleBuilder === 'builder1' ? 'selected' : ''"
-          @click="builder('builder1')"
-        >
+        <div class="select-builder-item" :class="styleBuilder === 'builder1' ? 'selected' : ''"
+          @click="builder('builder1')">
           CV Builder 1.0
         </div>
       </div>
       <div class="builder-container">
-        <p>
-          Trải nghiệm phiên bản công cụ tạo CV cá nhân hoá mới nhất của TopCV -
-          <b>{{ builderContent }}</b> với các mẫu CV mới nhất dưới đây.
-        </p>
+        <p v-if="styleBuilder === 'builder2'" class="builder-container-title">Trải nghiệm phiên bản công cụ tạo CV cá nhân
+          hoá mới nhất của TopCV - <b>CV Builder 2.0</b> với các mẫu CV mới nhất
+          dưới đây.</p>
+        <p v-if="styleBuilder === 'builder1'" class="builder-container-title">Tiếp tục trải nghiệm giao diện và các tính
+          năng quen thuộc của phiên bản <b>CV Builder 1.0</b> - Công cụ tạo CV online
+          số 1 Việt Nam với các mẫu CV dưới đây:</p>
+        <div class="container-maucv">
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-img">
+              <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.2/prosper.png?v=1.0.6"
+                alt="Thành đạt">
+            </div>
+            <div class="item-main">
+              <div class="item-powered"> 
+                <span><thunderbolt-outlined /></span>  Powered by CV Builder 2.0
+              </div>
+              <div class="item-header"> Thành đạt</div>
+              <ul class="item-color">
+                <li  class="item-color-list green"></li>
+                <li  class="item-color-list blue"></li>
+                <li  class="item-color-list error"></li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
       </div>
+      
     </div>
   </div>
 </template>
 
 <script>
 import "./maucv.scss";
+import { ThunderboltOutlined } from "@ant-design/icons-vue";
 import SelectOptionBase from "../../../components/SelectOption/SelectOptionBase.vue";
 export default {
-  components: { SelectOptionBase },
+  components: { SelectOptionBase, ThunderboltOutlined  },
   data() {
     return {
       language: [
@@ -228,18 +353,9 @@ export default {
       ],
       styleCv: "new",
       styleBuilder: "builder2",
-      builderContent: "",
     };
   },
   computed: {
-    builderContent() {
-      if (this.styleBuilder === "builder2") {
-        return "CV Builder 2.0";
-      }
-      if (this.styleBuilder === "builder1") {
-        return "CV Builder 1.0";
-      }
-    },
   },
   methods: {
     builder(style) {

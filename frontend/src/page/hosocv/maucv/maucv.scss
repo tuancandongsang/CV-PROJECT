@@ -32,7 +32,8 @@
 
             &-item {
                 label {
-                    margin-left: 4px;
+                    margin-left: 8px;
+                    font-weight: bold;
                 }
             }
 
@@ -58,19 +59,102 @@
                 text-align: center;
                 cursor: pointer;
                 padding: 12px 0;
+                font-weight: bold;
+                color: $text-purple-black;
             }
 
             .selected {
                 background-color: $btn-default;
+                color: $text-green;
             }
         }
 
         .builder-container {
             background-color: $btn-default;
+            padding: 20px 30px;
+
+            &-title {
+                color: $text-purple-black;
+                font-size: 600;
+            }
+
+            .container-maucv {
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+                gap: 2%;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 23%;
+                    border: 1px solid $border-white;
+                    margin-bottom: 20px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                    &-img {
+                        width: 100%;
+                        min-height: 60%;
+                        overflow: hidden;
+                    }
+
+                    &-main {
+                        padding: 12px;
+                    }
+
+                    &-powered {
+                        padding: 4px 4px;
+                        background-color: $bg-blue-light;
+                        color: $text-blue;
+                        max-width: 100%;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        font-size: 12px;
+
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+
+                    &-header {
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding-top: 8px;
+                    }
+
+                    &-color {
+                        display: flex;
+                        list-style-type: none;
+                        gap: 10px;
+                        padding: 0;
+                        margin-top: 15px;
+
+                        &-list {
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
         }
     }
 
+    .green {
+        background-color: $text-green;
+    }
+
+    .blue {
+        background-color: $text-blue;
+    }
+
+    .error {
+        background-color: $text-error;
+    }
+
     .width {
-        width: 1100px;
+        width: 1200px;
     }
 }
