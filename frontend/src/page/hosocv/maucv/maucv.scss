@@ -2,8 +2,8 @@
 
 #maucv {
     width: 100%;
-    background-color: $bg-app;
     position: relative;
+    background-color: $bg-app;
 
     .maucv {
         position: relative;
@@ -138,6 +138,61 @@
                         }
                     }
                 }
+            }
+        }
+
+        .baner {
+            margin: 20px 0;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .background-bottom {
+        width: 100%;
+        background-color: $bg-default;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .instruct {
+            padding-top: 50px;
+
+            .createcv {
+                border: 1px dashed $border-grey;
+                border-radius: 8px;
+                padding: 40px 0 20px 20px;
+                margin-bottom: 30px;
+
+                h3 {
+                    color: $text-green;
+                }
+
+                li {
+                    line-height: 2rem;
+                }
+            }
+
+            .menu {
+                background-color: $bg-app;
+
+                h2 {
+                    padding: 50px 0 20px 40px;
+                }
+            }
+
+            .little {
+                margin: 20px 0;
+            }
+
+            .more {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
             }
         }
     }
