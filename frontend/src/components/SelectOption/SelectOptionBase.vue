@@ -20,7 +20,7 @@ type options
     @focus="handleFocus"
     @blur="handleBlur"
     @change="handleChange"
-    class="alo"
+    class="select"
   >
   </a-select>
 </template>
@@ -61,7 +61,7 @@ export default defineComponent({
 });
 </script>
 <style>
-.alo {
+.select {
   font-weight: bold;
 }
 </style>

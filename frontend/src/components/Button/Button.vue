@@ -1,5 +1,5 @@
 <!-- param:{
-  content= "conten_btn" btn_css= "class_btn"
+  content= "Button" btn_css= "btn_green"
 } -->
 <template>
   <button :class="btn_css">{{ content }}</button>

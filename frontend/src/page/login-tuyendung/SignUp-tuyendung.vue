@@ -1,7 +1,11 @@
 <template>
   <div>
-    <Modal :visible="visible" :textOpenModal="textOpenModal" :btn_css="btn_css" ref="modal">
-
+    <Modal
+      :visible="visible"
+      :textOpenModal="textOpenModal"
+      :btn_css="btn_css"
+      ref="modal"
+    >
       <div class="modal-singup_tuyendung">
         <div class="modal-singup_tuyendung-header">
           <h2>Chào bạn,</h2>
@@ -18,15 +22,29 @@
           </h3>
           <div class="modal-singup_tuyendung-select-container">
             <div class="modal-singup_tuyendung-select-container-item">
-              <img src="../../assets/image/img_login_signup_tuyendung/bussiness.dfe4b5e.svg" alt="" />
+              <img
+                src="../../assets/image/img_login_signup_tuyendung/bussiness.dfe4b5e.svg"
+                alt=""
+              />
               <div class="modal-singup_tuyendung-select-container-item-button">
-                <Button @click="checkSignup_tuyendung" content="Tôi là nhà tuyển dụng" btn_css="btn_green" />
+                <Button
+                  @click="checkSignup_tuyendung"
+                  content="Tôi là nhà tuyển dụng"
+                  btn_css="btn_green"
+                />
               </div>
             </div>
             <div class="modal-singup_tuyendung-select-container-item">
-              <img src="../../assets/image/img_login_signup_tuyendung/student.031bdde.svg" alt="" />
+              <img
+                src="../../assets/image/img_login_signup_tuyendung/student.031bdde.svg"
+                alt=""
+              />
               <div class="modal-singup_tuyendung-select-container-item-button">
-                <Button @click="checkSignup" content="Tôi là ứng viên tìm việc" btn_css="btn_green" />
+                <Button
+                  @click="checkSignup"
+                  content="Tôi là ứng viên tìm việc"
+                  btn_css="btn_green"
+                />
               </div>
             </div>
           </div>
@@ -38,12 +56,13 @@
         <div class="signup_tuyendung-header">
           <div class="signup_tuyendung-header-navbar">
             <div>
-              <span @click="handleBack">
-                <ArrowLeftOutlined /> Quay lại
-              </span>
+              <span @click="handleBack"> <ArrowLeftOutlined /> Quay lại </span>
             </div>
             <div>
-              <img src="../../assets/image/logo-tuyendung/logo-tuyendung.webp" alt="" />
+              <img
+                src="../../assets/image/logo-tuyendung/logo-tuyendung.webp"
+                alt=""
+              />
             </div>
           </div>
           <div class="signup_tuyendung-header-body">
@@ -54,8 +73,12 @@
               công nghệ tuyển dụng ứng dụng sâu AI & Hiring Funnel
             </p>
           </div>
-          <h3 class="go_loginTuyendung" @click="() => this.$router.push('/login-tuyendung')">Bạn đã có tài khoản nhà tuyển
-            dụng</h3>
+          <h3
+            class="go_loginTuyendung"
+            @click="() => this.$router.push('/login-tuyendung')"
+          >
+            Bạn đã có tài khoản nhà tuyển dụng
+          </h3>
         </div>
       </div>
       <div class="signup_tuyendung-body">
@@ -85,50 +108,71 @@
           <p>
             <span>
               <PhoneOutlined class="phone" />
-            </span> &nbsp; (024) 71079799
+            </span>
+            &nbsp; (024) 71079799
           </p>
           <p>Đã có tài khoản? &nbsp; <b>Đăng nhập ngay</b></p>
         </div>
         <div class="signup_tuyendung-body-form">
-            <h1 class="title-acc">TÀI KHOẢN</h1>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Email đăng nhập:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='tuancandongsang@gmail.com' type='text' cssColorBorder='greenBorder'
-                  cssColor='greenColor' lable=''>
-                <template #left>
-                  <mail-outlined />
-                </template>
-                <template #right>
-                </template>
+          <h1 class="title-acc">TÀI KHOẢN</h1>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Email đăng nhập:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <div>
+                <Input
+                  placeholder="tuancandongsang@gmail.com"
+                  type="text"
+                  cssColorBorder="greenBorder"
+                  cssColor="greenColor"
+                  lable=""
+                >
+                  <template #left>
+                    <mail-outlined />
+                  </template>
+                  <template #right> </template>
                 </Input>
-                <p>
-                  *TopCV khuyến nghị đăng ký bằng email công ty (theo tên miền
-                  website công ty) để được hỗ trợ duyệt tin nhanh & đăng tin
-                  không giới hạn.
-                </p>
               </div>
+              <p>
+                *TopCV khuyến nghị đăng ký bằng email công ty (theo tên miền
+                website công ty) để được hỗ trợ duyệt tin nhanh & đăng tin không
+                giới hạn.
+              </p>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Mật khẩu:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input ref="pass" placeholder='Password' :type='password' cssColorBorder='greenBorder'
-                  cssColor='greenColor'>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Mật khẩu:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                ref="pass"
+                placeholder="Password"
+                :type="password"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <lock-outlined />
                 </template>
                 <template #right>
-                  <span v-if="isShowPass" @click="ShowPass('password')"><eye-outlined /></span>
-                  <span v-if="!isShowPass" @click="ShowPass('text')"><eye-invisible-outlined /></span>
+                  <span v-if="isShowPass" @click="ShowPass('password')"
+                    ><eye-outlined
+                  /></span>
+                  <span v-if="!isShowPass" @click="ShowPass('text')"
+                    ><eye-invisible-outlined
+                  /></span>
                 </template>
-                </Input>
-              </div>
+              </Input>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Nhập lại mật khẩu:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input ref="repass" placeholder='retype password' :type='password' cssColorBorder='greenBorder'
-                  cssColor='greenColor'>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Nhập lại mật khẩu:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                ref="repass"
+                placeholder="retype password"
+                :type="password"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <lock-outlined />
                 </template>
@@ -136,110 +180,133 @@
                   <!-- <span v-if="isShowPass"><eye-outlined /></span>
                   <span v-if="!isShowPass"><eye-invisible-outlined /></span> -->
                 </template>
-                </Input>
-              </div>
+              </Input>
             </div>
+          </div>
 
-            <h2 class="title-acc">THÔNG TIN NHÀ TUYỂN DỤNG</h2>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Họ và tên:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='Pham The Anh' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
+          <h2 class="title-acc">THÔNG TIN NHÀ TUYỂN DỤNG</h2>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Họ và tên:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                placeholder="Pham The Anh"
+                type=""
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <user-add-outlined />
                 </template>
-                <template #right>
-
-                </template>
-                </Input>
-              </div>
+                <template #right> </template>
+              </Input>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Số điện thoại cá nhân:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='xxxx' type='number' cssColorBorder='greenBorder' cssColor='greenColor' >
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Số điện thoại cá nhân:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                placeholder="xxxx"
+                type="number"
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <phone-outlined />
                 </template>
-                <template #right>
-
-                </template>
-                </Input>
-              </div>
+                <template #right> </template>
+              </Input>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Giới tính:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label=""  >
-                  <a-select v-model:value="formState.gender" placeholder="-Chọn giới tính-">
-                    <a-select-option value="male">Male</a-select-option>
-                    <a-select-option value="woman">Woman</a-select-option>
-                  </a-select>
-                </a-form-item>
-              </div>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Giới tính:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <a-form-item label="">
+                <a-select
+                  v-model:value="formState.gender"
+                  placeholder="-Chọn giới tính-"
+                >
+                  <a-select-option value="male">Male</a-select-option>
+                  <a-select-option value="woman">Woman</a-select-option>
+                </a-select>
+              </a-form-item>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Công ty:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='CMC' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Công ty:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                placeholder="CMC"
+                type=""
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <shop-outlined />
                 </template>
-                <template #right>
-
-                </template>
-                </Input>
-              </div>
+                <template #right> </template>
+              </Input>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Vị trí công tác::</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" >
-                  <a-select v-model:value="formState.workplace" placeholder="-Chọn vị trí công tác-">
-                    <a-select-option value="nhân viên">nhân viên</a-select-option>
-                    <a-select-option value="Giám Đốc">Giám Đốc</a-select-option>
-                    <a-select-option value="Tuyển dụng">Tuyển dụng</a-select-option>
-                    <a-select-option value="Nhân sự">Nhân sự</a-select-option>
-                  </a-select>
-                </a-form-item>
-              </div>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Vị trí công tác::</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <a-form-item label="">
+                <a-select
+                  v-model:value="formState.workplace"
+                  placeholder="-Chọn vị trí công tác-"
+                >
+                  <a-select-option value="nhân viên">nhân viên</a-select-option>
+                  <a-select-option value="Giám Đốc">Giám Đốc</a-select-option>
+                  <a-select-option value="Tuyển dụng"
+                    >Tuyển dụng</a-select-option
+                  >
+                  <a-select-option value="Nhân sự">Nhân sự</a-select-option>
+                </a-select>
+              </a-form-item>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Địa điểm làm việc:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <SelectLocationVue ref="location" />
-              </div>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Địa điểm làm việc:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <SelectLocationVue ref="location" />
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p>Skype:</p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <Input placeholder='alo@skype' type='' cssColorBorder='greenBorder' cssColor='greenColor'>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p>Skype:</p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <Input
+                placeholder="alo@skype"
+                type=""
+                cssColorBorder="greenBorder"
+                cssColor="greenColor"
+              >
                 <template #left>
                   <skype-outlined />
                 </template>
-                <template #right>
-                </template>
-                </Input>
-              </div>
+                <template #right> </template>
+              </Input>
             </div>
-            <div class="signup_tuyendung-body-form_item">
-              <p></p>
-              <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" required>
-                  <a-radio-group v-model:value="formState.check">
-                    <a-radio value="1">Tôi đồng ý với
-                      <a href="#"> <b>Điều khoản dịch vụ</b></a> của
-                      TopCV.</a-radio>
-                  </a-radio-group>
-                </a-form-item>
-              </div>
-            </div>
-            <div class="signup_tuyendung-body-form_submit">
-              <a-form-item>
-                <a-button type="primary" @click="onSubmit">Hoàn tất</a-button>
-                <a-button style="margin-left: 10px" @click="cancel">Hủy</a-button>
+          </div>
+          <div class="signup_tuyendung-body-form_item">
+            <p></p>
+            <div class="signup_tuyendung-body-form_item-input">
+              <a-form-item label="" required>
+                <a-radio-group v-model:value="formState.check">
+                  <a-radio value="1"
+                    >Tôi đồng ý với
+                    <a href="#"> <b>Điều khoản dịch vụ</b></a> của
+                    TopCV.</a-radio
+                  >
+                </a-radio-group>
               </a-form-item>
             </div>
+          </div>
+          <div class="signup_tuyendung-body-form_submit">
+            <a-form-item>
+              <a-button type="primary" @click="onSubmit">Hoàn tất</a-button>
+              <a-button style="margin-left: 10px" @click="cancel">Hủy</a-button>
+            </a-form-item>
+          </div>
         </div>
       </div>
     </div>
@@ -258,13 +325,13 @@ import {
   CaretDownOutlined,
   PhoneOutlined,
   ShopOutlined,
-  SkypeOutlined
-} from '@ant-design/icons-vue';
-import './signUp-tuyendung.scss';
-import Modal from '@/components/Modal/Modal.vue';
-import Button from '@/components/Button/Button.vue';
-import SelectLocationVue from '@/components/SelectLocation/SelectLocation.vue';
-import Input from '../../components/input/Input.vue';
+  SkypeOutlined,
+} from "@ant-design/icons-vue";
+import "./signUp-tuyendung.scss";
+import Modal from "@/components/Modal/Modal.vue";
+import Button from "@/components/Button/Button.vue";
+import SelectLocationVue from "@/components/SelectLocation/SelectLocation.vue";
+import Input from "../../components/input/Input.vue";
 export default {
   components: {
     SkypeOutlined,
@@ -286,12 +353,12 @@ export default {
   data() {
     return {
       isShowPass: false,
-      password: 'password',
+      password: "password",
       isShowInfor: true,
       visible: true,
-      textOpenModal: '',
-      btn_css: 'button_none',
-      formRef: '',
+      textOpenModal: "",
+      btn_css: "button_none",
+      formRef: "",
       formState: {
         email: undefined,
         name: undefined,
@@ -308,8 +375,8 @@ export default {
   },
   methods: {
     ShowPass(state) {
-      this.isShowPass = !this.isShowPass
-      this.password = state
+      this.isShowPass = !this.isShowPass;
+      this.password = state;
     },
     handleBack() {
       this.$router.go(-1);
@@ -318,7 +385,7 @@ export default {
       this.isShowInfor = !this.isShowInfor;
     },
     checkSignup() {
-      this.$router.push('/sign-up');
+      this.$router.push("/sign-up");
     },
     checkSignup_tuyendung() {
       this.visible = false;
@@ -328,10 +395,10 @@ export default {
     },
     async onSubmit() {
       this.formState.location = { ...this.$refs.location.location };
-      console.log('cuoi cung', this.formState);
+      console.log("cuoi cung", this.formState);
     },
     cancel() {
-      this.$router.push('/login-tuyendung');
+      this.$router.push("/login-tuyendung");
     },
   },
 };

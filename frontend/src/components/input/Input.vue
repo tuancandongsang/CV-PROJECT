@@ -10,7 +10,7 @@
  -->
 <template>
   <div id="input">
-    <div class="input-container" :class="cssColorBorder">
+    <div class="input-container" :class="cssColorBorder" >
       <div :class="cssColor">
         <slot name="left"></slot>
       </div>
@@ -48,6 +48,7 @@ export default {
 @import "../../styles/index.scss";
 
 #input {
+  height: 100%;
   .greenColor {
     color: $text-green;
   }
@@ -88,6 +89,7 @@ export default {
     border: 1px solid $border-input-gray;
     background-color: $btn-default;
     align-items: center;
+    height: 100%;
 
     input {
       margin: 0 6px;
