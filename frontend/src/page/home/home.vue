@@ -22,7 +22,7 @@
             </Input>
           </div>
           <div class="select">
-            <SelectOptionBaseVue placeholder="placeholder" :options="options" />
+            <SelectLocation placeholder="placeholder" :options="options" />
           </div>
           <div class="button">
             <ButtonVue content="Tìm việc làm" btn_css="btn_green" />
@@ -72,7 +72,7 @@
           <img
             src="https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/androidbadgesbox2.png"
             alt=""
-          />   
+          />
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/640px-Download_on_the_App_Store_Badge.svg.png"
             alt=""
@@ -88,10 +88,10 @@ import { SearchOutlined } from "@ant-design/icons-vue";
 import "./Home.scss";
 import Drawer from "@/components/Drawer/Drawer.vue";
 import ButtonVue from "@/components/Button/Button.vue";
-import SelectOptionBaseVue from "@/components/SelectOption/SelectOptionBase.vue";
+import SelectLocation from "@/components/SelectLocation/SelectLocation.vue";
 import Input from "@/components/input/Input.vue";
 export default {
-  components: { Drawer, ButtonVue, SelectOptionBaseVue, Input, SearchOutlined },
+  components: { Drawer, ButtonVue, SelectLocation, Input, SearchOutlined },
   data() {
     return {
       options: [

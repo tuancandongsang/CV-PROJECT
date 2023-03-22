@@ -34,7 +34,6 @@
                 font-weight: bold;
                 margin-top: 80px;
                 text-shadow: $text-default 1px 0 10px;
-
             }
 
             .descreption {}
@@ -65,19 +64,12 @@
             }
 
             .select {
-                flex: 1;
-                align-self: center;
-                height: 100%;
+                flex: 2;
+                display: flex;
+                color: $text;
 
-                .ant-select {
-                    height: 100%;
+                select {
                     border-radius: 50px;
-                    overflow: hidden;
-
-                    .ant-select-selector {
-                        height: 100%;
-                        border: none;
-                    }
                 }
             }
 
@@ -100,6 +92,10 @@
                     font-weight: bold;
                     opacity: 0.9;
                     cursor: pointer;
+
+                    &:hover {
+                        text-shadow: $text-default 1px 0 10px;
+                    }
                 }
             }
 
@@ -137,10 +133,8 @@
             }
 
             .button-create {
-                border-radius: 50px;
-                overflow: hidden;
-            
                 button {
+                    border-radius: 50px;
                     border: none;
                     padding: 20px 40px;
                 }
@@ -149,6 +143,7 @@
             .connect-social {
                 display: flex;
                 gap: 30px;
+
                 img {
                     width: 120px;
                     display: block;

@@ -237,8 +237,11 @@
       <div class="main width">
         <p class="logo-question">Q&A</p>
         <p class="question-header"><span>Câu hỏi</span> thường gặp</p>
+        <div class="question-ask">
+          <QuestionItem />
+        </div>
 
-        <QuestionItem
+        <!-- <QuestionItem
           question="Quy trình đăng ký dịch vụ Tư vấn CV Tiếng Việt  <br> / Tiếng Anh như thế nào?"
         >
           Bước 1: Đăng ký (kèm CV & JD), chuyển khoản hoàn thành đăng ký.
@@ -317,7 +320,7 @@
           <br />
           Điện thoại: (024) 6680 5588 (giờ hành chính) <br />
           Email: hotro@topcv.vn
-        </QuestionItem>
+        </QuestionItem> -->
       </div>
     </div>
     <div class="folow">
