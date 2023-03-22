@@ -25,12 +25,12 @@
             <SelectOptionBaseVue placeholder="placeholder" :options="options" />
           </div>
           <div class="button">
-            <ButtonVue content="Button" btn_css="btn_green" />
+            <ButtonVue content="Tìm việc làm" btn_css="btn_green" />
           </div>
         </div>
         <div class="keywoord">
           <p class="key">
-            Từ khóa phổ biến:
+            <b>Từ khóa phổ biến :</b>
             <span> Kế Toán </span>
             <span>Nhân Viên Kinh Doanh </span>
             <span>Biên Tập Viên </span>
@@ -40,31 +40,46 @@
         </div>
       </div>
     </div>
-    <!-- <div class="create-cv">
+    <div class="create-cv">
       <div class="background-img"></div>
       <div class="width container">
-        <div>
-          <p>Please select your language:</p>
-          <div>
-            <div>
+        <div class="language">
+          <p><b>Please select your language:</b></p>
+          <div class="language-flas">
+            <div class="language-flas-country">
               <img
                 src="https://www.topcv.vn/v4/image/flag/vn.png"
                 alt="vn"
               />Việt Nam
             </div>
-            <div>
+            <div class="language-flas-country">
               <img src="https://www.topcv.vn/v4/image/flag/us.png" alt="us" />
               English
             </div>
-
-            <div>
+            <div class="language-flas-country">
               <img src="https://www.topcv.vn/v4/image/flag/jp.png" alt="jp" />
               USA
             </div>
           </div>
         </div>
+        <div class="button-create">
+          <ButtonVue
+            content="TẠO CV MIỄN PHÍ NGAY BÂY GIỜ"
+            btn_css="btn_green"
+          />
+        </div>
+        <div class="connect-social">
+          <img
+            src="https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/androidbadgesbox2.png"
+            alt=""
+          />   
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/640px-Download_on_the_App_Store_Badge.svg.png"
+            alt=""
+          />
+        </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 

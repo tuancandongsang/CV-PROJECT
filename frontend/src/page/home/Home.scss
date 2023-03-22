@@ -2,7 +2,6 @@
 
 #home {
 
-    // background-color: $bg-app;
     .header {
         position: relative;
         width: 100%;
@@ -34,6 +33,7 @@
                 font-size: 3rem;
                 font-weight: bold;
                 margin-top: 80px;
+                text-shadow: $text-default 1px 0 10px;
 
             }
 
@@ -44,7 +44,6 @@
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
-                // padding: 20px 40px;
                 background-color: rgba($color: $bg-default, $alpha: 0.2);
                 text-align: center;
                 gap: 50px;
@@ -58,7 +57,8 @@
                 color: $text;
                 border-radius: 50px;
                 overflow: hidden;
-                .input-container{
+
+                .input-container {
                     border: none;
                 }
 
@@ -68,11 +68,13 @@
                 flex: 1;
                 align-self: center;
                 height: 100%;
-                .ant-select{
+
+                .ant-select {
                     height: 100%;
                     border-radius: 50px;
                     overflow: hidden;
-                    .ant-select-selector{
+
+                    .ant-select-selector {
                         height: 100%;
                         border: none;
                     }
@@ -81,15 +83,77 @@
 
             .button {
                 flex: 1;
-                button{
+
+                button {
                     border-radius: 50px;
                 }
             }
 
-            .keywoord {}
+            .keywoord {
+                margin-top: 12px;
+                align-self: flex-start;
+            }
 
-            .key {}
+            .key {
+                span {
+                    margin: 0 4px;
+                    font-weight: bold;
+                    opacity: 0.9;
+                    cursor: pointer;
+                }
+            }
 
+
+        }
+    }
+
+    .create-cv {
+        position: relative;
+        width: 100%;
+        height: 100px;
+
+        .background-img {}
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            .language {
+                .language-flas {
+                    display: flex;
+                    gap: 12px;
+
+                    &-country {
+                        img {
+                            margin-right: 4px;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+            .button-create {
+                border-radius: 50px;
+                overflow: hidden;
+            
+                button {
+                    border: none;
+                    padding: 20px 40px;
+                }
+            }
+
+            .connect-social {
+                display: flex;
+                gap: 30px;
+                img {
+                    width: 120px;
+                    display: block;
+                }
+            }
 
         }
     }
