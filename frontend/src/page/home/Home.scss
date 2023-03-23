@@ -153,6 +153,144 @@
         }
     }
 
+    .create-cv-upload {
+        background-color: $bg-app;
+        width: 100%;
+        position: relative;
+        height: 300px;
+        padding: 30px 0;
+
+        .container {
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            gap: 60px;
+
+            .create-cv {
+                padding: 20px 30px;
+                background-color: $bg-second;
+                height: 100%;
+                border-radius: 20px;
+
+                .tittle {
+                    color: $text-green;
+                }
+
+                .button {
+                    width: 30%;
+                    margin-top: 20px;
+                }
+
+                img {
+                    width: 200px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .hope {
+        position: relative;
+        width: 100%;
+        padding: 30px;
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+
+            .left {
+                flex: 5;
+
+                .tittle {
+                    color: $text-green;
+                    margin-bottom: 40px;
+                }
+
+                .step {
+                    margin: 8px 4px;
+
+                    b {
+                        color: $text-green;
+                        font-weight: 8900;
+                    }
+                }
+
+                .download {
+                    margin: 30px 0;
+                }
+
+                .box-img {
+
+                    img {
+                        width: 150px;
+                        cursor: pointer;
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            .right {
+                flex: 4;
+                align-self: flex-end;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .for-me {
+        position: relative;
+        width: 100%;
+        background-color: $bg-second;
+        padding: 30px 0;
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .tittle {
+                color: $text-green;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                text-align: justify;
+                margin-bottom: 20px;
+            }
+
+            .box-number {
+                width: 100%;
+                padding: 20px;
+                background-color: $bg-default;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 30px;
+                border-radius: 20px;
+
+                .item {
+                    width: 22%;
+
+                    h2 {
+                        color: $text-purple-black ;
+                        // margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
 
     .height-100 {
         height: 100%;

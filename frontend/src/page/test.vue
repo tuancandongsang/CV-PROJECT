@@ -1,142 +1,248 @@
 <template>
-  <div id="slider">
-    <div class="slider">
-      <ul class="slides" :style="{ left: -width * current + 'px' }">
-        <li v-for="(slide, i) in slides" :key="i">
-          <img :src="slide" alt="" />
-        </li>
-      </ul>
-      <ul class="bullets">
-        <li
-          v-for="(slide, i) in slides"
-          :key="i"
-          v-html="i == current ? '&#9679;' : '&omicron;'"
-        ></li>
-      </ul>
+  <div class="card-carousel-wrapper">
+    <div
+      class="card-carousel--nav__left"
+      @click="moveCarousel(-1)"
+      :disabled="atHeadOfList"
+    ></div>
+    <div class="card-carousel">
+      <div class="card-carousel--overflow-container">
+        <div
+          class="card-carousel-cards"
+          :style="{
+            transform: 'translateX' + '(' + currentOffset + 'px' + ')',
+          }"
+        >
+          <div
+            class="card-carousel--card"
+            v-for="item in items"
+            :key="item.name"
+          >
+            <img src="https://placehold.it/200x200" />
+            <div class="card-carousel--card--footer">
+              <p>{{ item.name }}</p>
+              <p
+                class="tag"
+                v-for="(tag, index) in item.tag"
+                :key="index"
+                :class="index &gt; 0 ? 'secondary' : ''"
+              >
+                {{ tag }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a class="prev" href="#" @click.prevent="prevSlide">&#x25C0;</a>
-    <a class="next" href="#" @click.prevent="nextSlide">&#x25B6;</a>
+    <div
+      class="card-carousel--nav__right"
+      @click="moveCarousel(1)"
+      :disabled="atEndOfList"
+    ></div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
-      slides: [
-        "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
-        "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
-        "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
-        "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
-        "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      currentOffset: 0,
+      windowSize: 3,
+      paginationFactor: 220,
+      items: [
+        { name: "Kin Khao", tag: ["Thai"] },
+        { name: "Jū-Ni", tag: ["Sushi", "Japanese", "$$$$"] },
+        { name: "Delfina", tag: ["Pizza", "Casual"] },
+        { name: "San Tung", tag: ["Chinese", "$$"] },
+        { name: "Anchor Oyster Bar", tag: ["Seafood", "Cioppino"] },
+        { name: "Locanda", tag: ["Italian"] },
+        { name: "Garden Creamery", tag: ["Ice cream"] },
       ],
-      current: 0,
-      width: 800,
-      timer: 0,
     };
   },
-  methods: {
-    nextSlide: function () {
-      this.current++;
-      if (this.current >= this.slides.length) this.current = 0;
-      this.resetPlay();
+  computed: {
+    atEndOfList() {
+      return (
+        this.currentOffset <=
+        this.paginationFactor * -1 * (this.items.length - this.windowSize)
+      );
     },
-    prevSlide: function () {
-      this.current--;
-      if (this.current < 0) this.current = this.slides.length - 1;
-      this.resetPlay();
-    },
-    selectSlide: function (i) {
-      this.current = i;
-      this.resetPlay();
-    },
-    resetPlay: function () {
-      clearInterval(this.timer);
-      this.play();
-    },
-    play: function () {
-      let app = this;
-      this.timer = setInterval(function () {
-        app.nextSlide();
-      }, 2000);
+    atHeadOfList() {
+      return this.currentOffset === 0;
     },
   },
-  created: function () {
-    this.play();
+  methods: {
+    moveCarousel(direction) {
+      // Find a more elegant way to express the :style. consider using props to make it truly generic
+      if (direction === 1 && !this.atEndOfList) {
+        this.currentOffset -= this.paginationFactor;
+      } else if (direction === -1 && !this.atHeadOfList) {
+        this.currentOffset += this.paginationFactor;
+      }
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-#slider {
-  width: 100%;
-  height: 500px;
-  position: relative;
-  .prev,
-  .next {
-    text-decoration: none;
-    color: green;
-    // padding: 50px 60px;
-    // background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-    font-size: 42px;
-    top: 50%;
-    transform: translate(0, -50%);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+<style scoped lang="scss">
+body {
+  background: gray;
+  color: red;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.card-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 40px;
+  color: gray;
+}
+
+.card-carousel {
+  display: flex;
+  justify-content: center;
+  width: 640px;
+
+  &--overflow-container {
+    overflow: hidden;
   }
-  .prev {
-    left: 20px;
+
+  &--nav__left,
+  &--nav__right {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 2px solid green;
+    border-right: 2px solid green;
+    cursor: pointer;
+    margin: 0 20px;
+    transition: transform 150ms linear;
+    &[disabled] {
+      opacity: 0.2;
+      border-color: black;
+    }
   }
-  .next {
-    right: 20px;
+
+  &--nav__left {
+    transform: rotate(-135deg);
+    &:active {
+      transform: rotate(-135deg) scale(0.9);
+    }
+  }
+
+  &--nav__right {
+    transform: rotate(45deg);
+    &:active {
+      transform: rotate(45deg) scale(0.9);
+    }
   }
 }
 
-.slider {
-  margin: 0 auto;
-  padding: 0;
-  width: 1150px;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  ul.slides {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: table;
-    position: absolute;
-    top: 0;
-    transition: left 800ms;
-    li {
-      list-style-type: none;
-      display: table-cell;
-      width: 100%;
-      img {
-        width: 1150px;
-        object-fit: fill;
+.card-carousel-cards {
+  display: flex;
+  transition: transform 150ms ease-out;
+  transform: translatex(0px);
+
+  .card-carousel--card {
+    margin: 0 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px 0 rgba(40, 44, 53, 0.06),
+      0 2px 2px 0 rgba(40, 44, 53, 0.08);
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 3;
+    margin-bottom: 2px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      vertical-align: bottom;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      transition: opacity 150ms linear;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &--footer {
+      border-top: 0;
+      padding: 7px 15px;
+
+      p {
+        padding: 3px 0;
+        margin: 0;
+        margin-bottom: 2px;
+        font-size: 19px;
+        font-weight: 500;
+        color: red;
+        user-select: none;
+
+        &.tag {
+          font-size: 11px;
+          font-weight: 300;
+          padding: 4px;
+          background: rgba(40, 44, 53, 0.06);
+          display: inline-block;
+          position: relative;
+          margin-left: 4px;
+          color: gray;
+
+          &:before {
+            content: "";
+            float: left;
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 0;
+            height: 0;
+            border-color: transparent rgba(40, 44, 53, 0.06) transparent
+              transparent;
+            border-style: solid;
+            border-width: 8px 12px 12px 0;
+          }
+          &.secondary {
+            margin-left: 0;
+            border-left: 1.45px dashed white;
+            &:before {
+              display: none !important;
+            }
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: -3px;
+            float: left;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background: white;
+            box-shadow: -0px -0px 0px #004977;
+          }
+        }
       }
     }
   }
-  ul.bullets {
-    width: inherit;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 0;
-    margin: 0 0 10px 0;
-    text-align: center;
-    z-index: 1;
-    li {
-      list-style-type: none;
-      display: inline;
-      color: #fff;
-      cursor: pointer;
-      padding: 0 5px;
-      font-size: 20px;
-      font-family: sans-serif;
-    }
-  }
+}
+
+h1 {
+  font-size: 3.6em;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 0;
+  color: green;
 }
 </style>
