@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div id="login">
     <div class="infor">
       <div class="infor-header">
         <router-link to="/">

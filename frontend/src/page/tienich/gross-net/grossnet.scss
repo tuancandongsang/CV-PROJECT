@@ -106,15 +106,18 @@
 
     .noti {
         &-header {
-            border-radius: 8px;
             background-color: $text-green;
             color: $text-default;
             border-radius: 20px;
-            display: inline-block;
             font-size: 14px;
             font-weight: 700;
             line-height: 20px;
-            padding: 2px 12px;
+            padding: 8px 20px;
+            margin-top: 12px;
+            color: $text-default;
+            font-size: 600;
+            border-radius: 20px;
+            display: inline-block;
         }
 
         p {
@@ -127,8 +130,8 @@
         &-social {
             span {
                 background-color: $bg-green;
-                margin-right: 20px;
-                padding: 8px 12px;
+                margin: 10px 20px 10px 0;
+                padding: 8px 20px;
                 color: $text-default;
                 font-size: 600;
                 border-radius: 20px;
