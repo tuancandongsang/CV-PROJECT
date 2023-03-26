@@ -191,11 +191,71 @@
         </div>
       </div>
     </div>
+    <div class="feature">
+      <div class="container width">
+        <h1 class="tittle">Phát triển bản thân và sự nghiệp</h1>
+        <div class="feature-item">
+          <div class="item" v-for="item in feature" :key="item.tittle">
+            <div class="item-img">
+              <img :src="item.urlIcon" alt="" />
+            </div>
+            <div class="infor">
+              <h3 class="tittle">{{ item.tittle }}</h3>
+              <p class="description">
+                {{ item.description }}
+              </p>
+              <div class="button">
+                <div
+                  v-if="item.button1"
+                  @click="this.$router.push(`${item.linkButton1}`)"
+                >
+                  <ButtonVue :content="item.button1" btn_css="button_second" />
+                </div>
+                <div
+                  v-if="item.button2"
+                  @click="this.$router.push(`${item.linkButton2}`)"
+                >
+                  <ButtonVue :content="item.button2" btn_css="button_second" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="news">
+      <div class="container width">
+        <h3 class="tittle">Báo chí nói về TopCV</h3>
+        <div class="news-list">
+          <img v-for="item in newsListLogo" :key="item" :src="item" alt="" />
+        </div>
+        <h3 class="tittle">Giải thưởng, thành tựu</h3>
+        <div class="awards-list">
+          <div
+            class="awards-list-item"
+            v-for="item in newItemAwards"
+            :key="item.img"
+          >
+            <img :src="item.img" alt="" />
+            <p class="key"><RightCircleOutlined /> {{ item.key }}</p>
+            <p class="description">{{ item.description }}</p>
+            <div class="more" @click="this.$router.push(`${item.link}`)">
+              Đọc thêm <DoubleRightOutlined />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { SearchOutlined, PlusCircleOutlined } from "@ant-design/icons-vue";
+import {
+  SearchOutlined,
+  PlusCircleOutlined,
+  DoubleRightOutlined,
+  RightCircleOutlined,
+} from "@ant-design/icons-vue";
 import "./Home.scss";
 import Drawer from "@/components/Drawer/Drawer.vue";
 import ButtonVue from "@/components/Button/Button.vue";
@@ -203,6 +263,8 @@ import SelectLocation from "@/components/SelectLocation/SelectLocation.vue";
 import Input from "@/components/input/Input.vue";
 export default {
   components: {
+    RightCircleOutlined,
+    DoubleRightOutlined,
     PlusCircleOutlined,
     Drawer,
     ButtonVue,
@@ -216,6 +278,96 @@ export default {
         {
           value: "jack",
           label: "Jack",
+        },
+      ],
+      feature: [
+        {
+          urlIcon: "https://www.topcv.vn/v4/image/welcome/ic1.svg",
+          tittle: "Khám phá tính cách và năng lực bản thân",
+          description:
+            "Lựa chọn nghề nghiệp chính xác hơn thông qua các bài trắc nghiệm về tính cách, khả năng giải quyết vấn đề, trí thông minh,...",
+          button1: "Trắc nghiệm MBTI",
+          button2: "Trắc nghiệm MI",
+          linkButton1: `/login`,
+          linkButton2: `/login`,
+        },
+        {
+          urlIcon: "	https://www.topcv.vn/v4/image/welcome/ic2.svg",
+          tittle: "Tra cứu thông tin sự nghiệp",
+          description:
+            "Dễ dàng tiếp cận và tìm hiểu về các chế độ, chính sách nhân sự cần biết thông qua các công cụ hữu ích",
+          button1: "Công cụ tính lương Gross-Net",
+          button2: "Công cụ tính BHTN",
+          linkButton1: `/tienich/gross-to-net`,
+          linkButton2: `/tienich/bao-hiem-that-nghiep`,
+        },
+        {
+          urlIcon: "https://www.topcv.vn/v4/image/welcome/ic3.svg",
+          tittle: "Quỹ ý tưởng phát triển nghề nghiệp TopCareer",
+          description:
+            "Giúp học sinh, sinh viên hiểu về tầm quan trọng của giáo dục hướng nghiệp, nhận diện nghề và nâng cao năng lực ứng tuyển",
+          button1: "Tìm hiểu thêm",
+          button2: undefined,
+          linkButton1: `/login`,
+          linkButton2: `/login`,
+        },
+        {
+          urlIcon: "https://www.topcv.vn/v4/image/welcome/ic4.svg",
+          tittle: "TopCV Contest - Cổng học tập và đánh giá năng lực",
+          description:
+            "Cung cấp các khóa học, các kỳ thi giúp ứng viên hiểu rõ về xu hướng việc làm và những tiêu chuẩn mới về Năng lực chuyên môn",
+          button1: "Tìm hiểu thêm",
+          button2: undefined,
+          linkButton1: `/login`,
+          linkButton2: `/login`,
+        },
+        {
+          urlIcon: "https://www.topcv.vn/v4/image/welcome/ic5.svg",
+          tittle: "Chương trình bệ phóng sự nghiệp 4.0",
+          description:
+            "Cung cấp cho sinh viên thông tin về thị trường tuyển dụng và đào tạo kỹ năng ứng tuyển, kết nối Nhà trường và Doanh nghiệp",
+          button1: "Tìm hiểu thêm",
+          button2: undefined,
+          linkButton1: `/login`,
+          linkButton2: `/login`,
+        },
+      ],
+      newsListLogo: [
+        "	https://www.topcv.vn/v4/image/welcome/logo_bao_chi_01.png",
+        "https://www.topcv.vn/v4/image/welcome/logo_bao_chi_02.png",
+        "https://www.topcv.vn/v4/image/welcome/logo_bao_chi_03.png",
+        "https://www.topcv.vn/v4/image/welcome/logo_bao_chi_04.png",
+        "https://www.topcv.vn/v4/image/welcome/logo_bao_chi_05.png",
+        "https://www.topcv.vn/v4/image/welcome/logo_bao_chi_06.png",
+      ],
+      newItemAwards: [
+        {
+          img: "https://www.topcv.vn/v4/image/welcome/award/award_01.png",
+          key: " Startup",
+          description:
+            "Top 15 Startups xuất sắc của chương trình “Bình chọn Startup Việt 2018”",
+          link: "",
+        },
+        {
+          img: "https://www.topcv.vn/v4/image/welcome/award/award_02.png",
+          key: " Startup",
+          description:
+            "Top 15 Startups được Google lựa chọn tham gia Google for Startups Accelerator: Southeast Asia",
+          link: "",
+        },
+        {
+          img: "https://www.topcv.vn/v4/image/welcome/award/award_03.png",
+          key: " Technology",
+          description:
+            "Nhận giải thưởng Sao Khuê 2020 về lĩnh vực Nền tảng và công cụ tuyển dụng",
+          link: "",
+        },
+        {
+          img: "https://www.topcv.vn/v4/image/welcome/award/award_04.png",
+          key: " AI",
+          description:
+            "Nhận giải thưởng Sao Khuê 2021 với giải pháp ứng dụng AI vào tuyển dụng CV Scout TopMatch.AI",
+          link: "",
         },
       ],
     };
